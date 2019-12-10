@@ -3,18 +3,20 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>AprilStudio</title>
+        <title>AprilStudio: {{ $work->title }}</title>
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     </head>
     <body>
         <main class="container">
-            <h1>Наши работы</h1>
-            <ul class="list-group">
-                @foreach ($works as $work)
-                    <li class="list-group-item"><a href="/works/{{ $work->slugs[0]->slug }}">{{ $work->title }}</a></li>
-                @endforeach
-            </ul>
+            <div class="jumbotron">
+                <h1>{{ $work->title }}</h1>
+            </div>
+
+            <img src="{{ $work->image('cover') }}">
+
+            <p>{{ $work->description }}</p>
+            {!! $renderedBlocks !!}
         </main>
 
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

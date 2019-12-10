@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'Frontend\WorkController@index');
+Route::get('/works/{slug}', 'Frontend\WorkController@show');
