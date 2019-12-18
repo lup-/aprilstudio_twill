@@ -6,16 +6,40 @@
         <title>AprilStudio: {{ $work->title }}</title>
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <style>
+            * {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+            .full-width-image {width: 100%}
+            .img-bg-filler {width: 100%; height: 100%; background: #eee;}
+            .blockquote {
+                font-weight: bold;
+                font-size: 35px;
+                line-height: 40px;
+            }
+
+            .blockquote:before {
+                left: 0;
+                display: block;
+                position: absolute;
+                content: open-quote;
+            }
+
+            .blockquote:after {
+                content: close-quote;
+            }
+        </style>
     </head>
     <body>
-        <main class="container">
-            <div class="jumbotron">
-                <h1>{{ $work->title }}</h1>
+        <header class="container-fluid p-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>{{ $work->title }}</h1>
+                </div>
+                <div class="col-md-6">
+                    <h3>{{ $work->description}}</h3>
+                </div>
             </div>
-
-            <img src="{{ $work->image('cover') }}">
-
-            <p>{{ $work->description }}</p>
+        </header>
+        <main class="py-4">
             {!! $renderedBlocks !!}
         </main>
 

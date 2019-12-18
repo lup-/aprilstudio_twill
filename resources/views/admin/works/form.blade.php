@@ -14,6 +14,6 @@
     ])
 
     @formField('block_editor', [
-        'blocks' => ['quote']
+        'blocks' => ['quote', 'full_width_image', 'fixed_image_grid', 'fluid_image_grid']
     ])
 @stop
