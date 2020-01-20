@@ -3,30 +3,19 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>AprilStudio</title>
+        <title>AprilStudio: {{ $title }}</title>
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="/css/frontend.css">
     </head>
     <body>
-        <header class="container-fluid">
+        <header class="container-fluid p-4">
             <div class="row">
-                <div class="col-10">
-                    <h1>AprilStudio</h1>
+                <div class="col-md-6">
+                    <h1>{{ $title }}</h1>
                 </div>
-                <div class="col-2">
-                    <div class="dropdown">
-                        <button class="btn btn-secondary-outline dropdown-toggle" type="button" id="langMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            {{ Config::get('languages')[App::getLocale()] }}
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="langMenuButton">
-                            @foreach (Config::get('languages') as $lang => $language)
-                            @if ($lang != App::getLocale())
-                            <a class="dropdown-item" href="{{ route('lang.switch', $lang) }}">{{$language}}</a>
-                            @endif
-                            @endforeach
-                        </div>
-                    </div>
+                <div class="col-md-6">
+                    <h3>{{ $description }}</h3>
                 </div>
             </div>
         </header>
@@ -36,7 +25,7 @@
                 <div class="row">
                     <a class="main-image-block col-sm-6 d-flex flex-column cell-link mb-sm-0 mb-4 {{$loop->even ? 'order-last' : ''}}" href="{{ $chunk[0]->getRelativeUrl() }}">
                         <div class="img-cell flex-fill img-bg d-flex align-items-center justify-content-center first-img">
-                            <img src="{{$chunk[0]->rawImage('cover')}}" class="img-fluid">
+                            <img src="{{$chunk[0]->image('cover')}}" class="img-fluid">
                         </div>
                         <h4 class="mt-2 d-inline d-sm-none">
                             {{$chunk[0]->title}}

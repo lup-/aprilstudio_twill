@@ -2,15 +2,21 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Http\Controllers\Controller;
 use App\Models\Work;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\View\View;
-
 
 class WorkController
 {
     public function index() {
-        $works = Work::where('published', true)->ordered()->get();
+        $works = Work::where('published', true)
+                     ->whereHas('slugs', function (Builder $query) {
+                            $query
+                                ->where('locale', '=', app()->getLocale())
+                                ->where('active', '=', 1);
+                        })
+                     ->ordered()
+                     ->get();
         $works_array_of_models = [];
         foreach ($works as $work) {
             $works_array_of_models[] = $work;

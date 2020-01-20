@@ -1,0 +1,32 @@
+* {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+.full-width-image {width: 100%}
+.img-bg-filler {width: 100%; height: 100%; background: #fff;}
+.blockquote {
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 40px;
+}
+
+.blockquote:before {
+    left: 0;
+    display: block;
+    position: absolute;
+    content: open-quote;
+}
+
+.blockquote:after {
+    content: close-quote;
+}
+
+header {margin-bottom: 80px; margin-top: 32px; position: sticky; top: 0; background: white; z-index: 1000;}
+
+.img-bg {background: #fff;}
+.img-filler {width: 100%; height: 100%; }
+.img-cell {width: 100%;}
+.work-chunk {margin-bottom: 80px;}
+.cell-link, .cell-link:hover, .cell-link:active, .cell-link:visited {text-decoration: none; color: #212529;}
+
+@media screen and (min-width: 768px) {
+    .first-img {min-height: 450px;}
+    .secondary-img {height: 210px;}
+}

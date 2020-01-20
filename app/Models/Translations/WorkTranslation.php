@@ -11,5 +11,6 @@ class WorkTranslation extends Model
         'description',
         'active',
         'locale',
+        'casestudy'
     ];
 }

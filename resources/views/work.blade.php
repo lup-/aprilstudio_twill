@@ -6,27 +6,7 @@
         <title>AprilStudio: {{ $work->title }}</title>
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <style>
-            * {font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
-            .full-width-image {width: 100%}
-            .img-bg-filler {width: 100%; height: 100%; background: #eee;}
-            .blockquote {
-                font-weight: bold;
-                font-size: 35px;
-                line-height: 40px;
-            }
-
-            .blockquote:before {
-                left: 0;
-                display: block;
-                position: absolute;
-                content: open-quote;
-            }
-
-            .blockquote:after {
-                content: close-quote;
-            }
-        </style>
+        <link rel="stylesheet" href="/css/frontend.css">
     </head>
     <body>
         <header class="container-fluid p-4">
@@ -40,6 +20,16 @@
             </div>
         </header>
         <main class="py-4">
+            @if ($work->casestudy)
+            <div class="container-fluid px-4 mb-4">
+                <div class="row">
+                    <div class="col">
+                        {!! $work->casestudy !!}
+                    </div>
+                </div>
+            </div>
+            @endif
+
             {!! $renderedBlocks !!}
         </main>
 

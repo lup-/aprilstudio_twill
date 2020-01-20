@@ -61,6 +61,7 @@ services:
     volumes:
       - ".:/var/www"
       - "./etc/php/log-stdout.conf:/usr/local/etc/php-fpm.d/zz-log.conf"
+      - "./etc/php/upload.ini:/usr/local/etc/php/conf.d/upload.ini"
       - "./etc/php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini"
     depends_on:
       - database

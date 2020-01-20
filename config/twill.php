@@ -45,39 +45,8 @@ return [
                 'default' => [
                     [
                         'name'      => 'default',
-                        'ratio'     => 1 / 1,
                         'minValues' => [
                             'width'  => 100,
-                            'height' => 100,
-                        ],
-                    ],
-                ],
-                'desktop' => [
-                    [
-                        'name' => 'desktop',
-                        'ratio' => 16 / 9,
-                        'minValues' => [
-                            'width' => 100,
-                            'height' => 100,
-                        ],
-                    ],
-                ],
-                'tablet' => [
-                    [
-                        'name' => 'tablet',
-                        'ratio' => 4 / 3,
-                        'minValues' => [
-                            'width' => 100,
-                            'height' => 100,
-                        ],
-                    ],
-                ],
-                'mobile' => [
-                    [
-                        'name' => 'mobile',
-                        'ratio' => 1,
-                        'minValues' => [
-                            'width' => 100,
                             'height' => 100,
                         ],
                     ],
@@ -87,39 +56,8 @@ return [
                 'default' => [
                     [
                         'name'      => 'default',
-                        'ratio'     => 1 / 1,
                         'minValues' => [
                             'width'  => 100,
-                            'height' => 100,
-                        ],
-                    ],
-                ],
-                'desktop' => [
-                    [
-                        'name' => 'desktop',
-                        'ratio' => 16 / 9,
-                        'minValues' => [
-                            'width' => 100,
-                            'height' => 100,
-                        ],
-                    ],
-                ],
-                'tablet' => [
-                    [
-                        'name' => 'tablet',
-                        'ratio' => 4 / 3,
-                        'minValues' => [
-                            'width' => 100,
-                            'height' => 100,
-                        ],
-                    ],
-                ],
-                'mobile' => [
-                    [
-                        'name' => 'mobile',
-                        'ratio' => 1,
-                        'minValues' => [
-                            'width' => 100,
                             'height' => 100,
                         ],
                     ],
@@ -129,39 +67,8 @@ return [
                 'default' => [
                     [
                         'name'      => 'default',
-                        'ratio'     => 1 / 1,
                         'minValues' => [
                             'width'  => 100,
-                            'height' => 100,
-                        ],
-                    ],
-                ],
-                'desktop' => [
-                    [
-                        'name' => 'desktop',
-                        'ratio' => 16 / 9,
-                        'minValues' => [
-                            'width' => 100,
-                            'height' => 100,
-                        ],
-                    ],
-                ],
-                'tablet' => [
-                    [
-                        'name' => 'tablet',
-                        'ratio' => 4 / 3,
-                        'minValues' => [
-                            'width' => 100,
-                            'height' => 100,
-                        ],
-                    ],
-                ],
-                'mobile' => [
-                    [
-                        'name' => 'mobile',
-                        'ratio' => 1,
-                        'minValues' => [
-                            'width' => 100,
                             'height' => 100,
                         ],
                     ],
@@ -170,7 +77,18 @@ return [
         ]
     ],
     'crops'        => [
-        'cover' => [
+        'original' => [
+            'default' => [
+                [
+                    'name'      => 'default',
+                    'minValues' => [
+                        'width'  => 100,
+                        'height' => 100,
+                    ],
+                ],
+            ],
+        ],
+        'square' => [
             'default' => [
                 [
                     'name'      => 'default',

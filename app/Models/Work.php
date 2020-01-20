@@ -11,6 +11,7 @@ use A17\Twill\Models\Behaviors\HasPosition;
 use A17\Twill\Models\Behaviors\Sortable;
 use A17\Twill\Models\Model;
 use Cartalyst\Tags\TaggableTrait;
+use \ImageService;
 
 class Work extends Model implements Sortable
 {
@@ -22,30 +23,22 @@ class Work extends Model implements Sortable
         'description',
         'position',
         'casestudy'
-        // 'public',
-        // 'featured',
-        // 'publish_start_date',
-        // 'publish_end_date',
     ];
 
-    // uncomment and modify this as needed if you use the HasTranslation trait
     public $translatedAttributes = [
          'title',
          'description',
          'casestudy'
      ];
 
-    // uncomment and modify this as needed if you use the HasSlug trait
     public $slugAttributes = [
          'title',
     ];
 
-    // add checkbox fields names here (published toggle is itself a checkbox)
     public $checkboxes = [
         'published'
     ];
 
-    // uncomment and modify this as needed if you use the HasMedias trait
     public $mediasParams = [
         'cover' => [
             'default' => [
@@ -67,23 +60,40 @@ class Work extends Model implements Sortable
         ],
     ];
 
-    public function designers()
-    {
+    public function getRelativeUrl() {
+        $activeSlug = $this->getActiveSlug();
+        return '/works/' . $activeSlug->slug;
+    }
+
+    public function rawImage($role, $crop = "default", $has_fallback = false, $media = null) {
+        if (!$media) {
+            $media = $this->findMedia($role, $crop);
+        }
+
+        if ($media) {
+            return ImageService::getRawUrl($media->uuid);
+        }
+
+        if ($has_fallback) {
+            return null;
+        }
+
+        return ImageService::getTransparentFallbackUrl();
+    }
+
+    public function designers() {
         return $this->belongsToMany(\App\Models\Designer::class);
     }
 
-    public function categories()
-    {
+    public function categories() {
         return $this->belongsToMany(\App\Models\Category::class);
     }
 
-    public function areas()
-    {
+    public function areas() {
         return $this->belongsToMany(\App\Models\Area::class);
     }
 
-    public function types()
-    {
+    public function types() {
         return $this->belongsToMany(\App\Models\Type::class);
     }
 }
