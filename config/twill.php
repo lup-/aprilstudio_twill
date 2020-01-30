@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'enabled' => [
+        'buckets' => true,
+    ],
     "block_editor" => [
         'block_single_layout' => 'layouts.block',
         'blocks'              => [
@@ -9,7 +12,16 @@ return [
                 'icon'      => 'quote',
                 'component' => 'a17-block-quote',
             ],
-
+            'vimeo' => [
+                'title'     => 'Vimeo Video',
+                'icon'      => 'slideshow',
+                'component' => 'a17-block-vimeo',
+            ],
+            'youtube' => [
+                'title'     => 'Youtube Video',
+                'icon'      => 'slideshow',
+                'component' => 'a17-block-youtube',
+            ],
             'full_width_image' => [
                 'title' => 'Full-width Image',
                 'icon' => 'image',
@@ -97,6 +109,35 @@ return [
                         'width'  => 100,
                         'height' => 100,
                     ],
+                ],
+            ],
+        ],
+    ],
+    'buckets' => [
+        'homepage' => [
+            'name' => 'Home',
+            'buckets' => [
+                'home_favourite_works' => [
+                    'name' => 'Home favourite works',
+                    'bucketables' => [
+                        [
+                            'module' => 'works',
+                            'name' => 'Works',
+                            'scopes' => ['published' => true],
+                        ],
+                    ],
+                    'max_items' => 10,
+                ],
+                'home_other_works' => [
+                    'name' => 'Home other works',
+                    'bucketables' => [
+                        [
+                            'module' => 'works',
+                            'name' => 'Works',
+                            'scopes' => ['published' => true],
+                        ],
+                    ],
+                    'max_items' => 100,
                 ],
             ],
         ],

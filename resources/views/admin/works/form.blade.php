@@ -47,7 +47,5 @@
         'max' => 10,
     ])
 
-    @formField('block_editor', [
-        'blocks' => ['quote', 'full_width_image', 'fixed_image_grid', 'fluid_image_grid']
-    ])
+    @formField('block_editor')
 @stop

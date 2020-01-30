@@ -21,9 +21,9 @@
                         </button>
                         <div class="dropdown-menu" aria-labelledby="langMenuButton">
                             @foreach (Config::get('languages') as $lang => $language)
-                            @if ($lang != App::getLocale())
-                            <a class="dropdown-item" href="{{ route('lang.switch', $lang) }}">{{$language}}</a>
-                            @endif
+                                @if ($lang != App::getLocale())
+                                    <a class="dropdown-item" href="{{ route('lang.switch', $lang) }}">{{$language}}</a>
+                                @endif
                             @endforeach
                         </div>
                     </div>
@@ -31,90 +31,12 @@
             </div>
         </header>
         <main>
-            @foreach ($work_chunks as $chunk)
-            <section class="container-fluid work-chunk">
-                <div class="row">
-                    <a class="main-image-block col-sm-6 d-flex flex-column cell-link mb-sm-0 mb-4 {{$loop->even ? 'order-last' : ''}}" href="{{ $chunk[0]->getRelativeUrl() }}">
-                        <div class="img-cell flex-fill img-bg d-flex align-items-center justify-content-center first-img">
-                            <img src="{{$chunk[0]->rawImage('cover')}}" class="img-fluid">
-                        </div>
-                        <h4 class="mt-2 d-inline d-sm-none">
-                            {{$chunk[0]->title}}
-                        </h4>
-                    </a>
-                    <div class="col-sm-6">
-                        <div class="row row-1-and-2">
-                            @if (isset($chunk[1]))
-                            <a class="col-sm-6 cell-link mb-sm-2 mb-4" href="{{ $chunk[1]->getRelativeUrl() }}">
-                                <div class="img-cell img-bg d-flex align-items-center justify-content-center secondary-img">
-                                    <img src="{{$chunk[1]->image('cover')}}" class="img-fluid">
-                                </div>
-                                <h4 class="mt-2 flex-fill">
-                                    {{$chunk[1]->title}}
-                                </h4>
-                            </a>
-                            @endif
-                            @if (isset($chunk[2]))
-                            <a class="col-sm-6 cell-link mb-sm-2 mb-4" href="{{ $chunk[2]->getRelativeUrl() }}">
-                                <div class="img-cell img-bg d-flex align-items-center justify-content-center secondary-img">
-                                    <img src="{{$chunk[2]->image('cover')}}" class="img-fluid">
-                                </div>
-                                <h4 class="mt-2 flex-fill">
-                                    {{$chunk[2]->title}}
-                                </h4>
-                            </a>
-                            @endif
-                        </div>
-                        <div class="row row-3-and-4">
-                            @if (isset($chunk[3]))
-                            <a class="col-sm-6 cell-link mb-sm-0 mb-4" href="{{ $chunk[3]->getRelativeUrl() }}">
-                                <div class="img-cell img-bg d-flex align-items-center justify-content-center secondary-img">
-                                    <img src="{{$chunk[3]->image('cover')}}" class="img-fluid">
-                                </div>
-                                <h4 class="mt-2 flex-fill d-block d-sm-none">
-                                    {{$chunk[3]->title}}
-                                </h4>
-                            </a>
-                            @endif
-                            @if (isset($chunk[4]))
-                            <a class="col-sm-6 cell-link mb-sm-0 mb-4" href="{{ $chunk[4]->getRelativeUrl() }}">
-                                <div class="img-cell img-bg d-flex align-items-center justify-content-center secondary-img">
-                                    <img src="{{$chunk[4]->image('cover')}}" class="img-fluid">
-                                </div>
-                                <h4 class="mt-2 flex-fill d-block d-sm-none">
-                                    {{$chunk[4]->title}}
-                                </h4>
-                            </a>
-                            @endif
-                        </div>
-                    </div>
-                </div>
-                <div class="row d-none d-sm-flex desktop-low-headers-row">
-                    <a class="col-sm-6 cell-link {{$loop->even ? 'order-last' : ''}}" href="{{ $chunk[0]->getRelativeUrl() }}">
-                        <h4 class="mt-2">
-                            {{$chunk[0]->title}}
-                        </h4>
-                    </a>
-                    @if (isset($chunk[3]))
-                    <a class="col-sm-3 cell-link" href="{{ $chunk[3]->getRelativeUrl() }}">
-                        <h4 class="mt-2 flex-fill">
-                            {{$chunk[3]->title}}
-                        </h4>
-                    </a>
-                    @else
-                    <div class="col-sm-3"></div>
-                    @endif
-                    @if (isset($chunk[4]))
-                    <a class="col-sm-3 cell-link" href="{{ $chunk[4]->getRelativeUrl() }}">
-                        <h4 class="mt-2 flex-fill">
-                            {{$chunk[4]->title}}
-                        </h4>
-                    </a>
-                    @else
-                    <div class="col-sm-3"></div>
-                    @endif
-                </div>
-            </section>
+            @foreach ($favouriteWorks as $chunk)
+                @include('work_chunk', ['chunk' => $chunk, 'loop' => $loop])
+            @endforeach
+
+            @foreach ($otherWorks as $chunk)
+                @include('work_chunk', ['chunk' => $chunk, 'loop' => $loop])
             @endforeach
         </main>
 

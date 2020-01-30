@@ -60,6 +60,32 @@ class Work extends Model implements Sortable
         ],
     ];
 
+    public function getSlugLocale($slugText) {
+        foreach ($this->slugs as $slug) {
+            if ($slug->slug === $slugText) {
+                return $slug->locale;
+            }
+        }
+
+        return false;
+    }
+
+    public function scopeForSlugIgnoreLocale($query, $slug) {
+        return $query->whereHas('slugs', function ($query) use ($slug) {
+            $query->whereSlug($slug);
+            $query->whereActive(true);
+        })->with(['slugs']);
+    }
+
+    public function scopeFromBucket($query, $bucketKey) {
+        return $query
+            ->leftJoin('features', 'works.id', '=', 'features.featured_id')
+            ->select('works.*', 'features.position')
+            ->where('features.bucket_key', '=', $bucketKey)
+            ->where('features.featured_type', '=', 'works')
+            ->orderBy('features.position', 'ASC');
+    }
+
     public function getRelativeUrl() {
         $activeSlug = $this->getActiveSlug();
         return '/works/' . $activeSlug->slug;
@@ -81,19 +107,23 @@ class Work extends Model implements Sortable
         return ImageService::getTransparentFallbackUrl();
     }
 
+    public function blocks() {
+        return $this->morphMany(Block::class, 'blockable')->orderBy('blocks.position', 'asc');
+    }
+
     public function designers() {
-        return $this->belongsToMany(\App\Models\Designer::class);
+        return $this->belongsToMany(Designer::class);
     }
 
     public function categories() {
-        return $this->belongsToMany(\App\Models\Category::class);
+        return $this->belongsToMany(Category::class);
     }
 
     public function areas() {
-        return $this->belongsToMany(\App\Models\Area::class);
+        return $this->belongsToMany(Area::class);
     }
 
     public function types() {
-        return $this->belongsToMany(\App\Models\Type::class);
+        return $this->belongsToMany(Type::class);
     }
 }

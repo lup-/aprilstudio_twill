@@ -1,6 +1,16 @@
 <?php
 
 return [
+    'homepage' => [
+        'title' => 'Homepage',
+        'route' => 'admin.featured.homepage',
+        'primary_navigation' => [
+            'homepage' => [
+                'title' => 'Homepage',
+                'route' => 'admin.featured.homepage',
+            ],
+        ],
+    ],
     'works' => [
         'title' => 'Works',
         'module' => true
