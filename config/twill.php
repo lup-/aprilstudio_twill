@@ -57,6 +57,7 @@ return [
                 'default' => [
                     [
                         'name'      => 'default',
+                        'ratio'     => 0,
                         'minValues' => [
                             'width'  => 100,
                             'height' => 100,
@@ -68,6 +69,7 @@ return [
                 'default' => [
                     [
                         'name'      => 'default',
+                        'ratio'     => 0,
                         'minValues' => [
                             'width'  => 100,
                             'height' => 100,
@@ -79,6 +81,7 @@ return [
                 'default' => [
                     [
                         'name'      => 'default',
+                        'ratio'     => 0,
                         'minValues' => [
                             'width'  => 100,
                             'height' => 100,
@@ -93,6 +96,7 @@ return [
             'default' => [
                 [
                     'name'      => 'default',
+                    'ratio'     => 0,
                     'minValues' => [
                         'width'  => 100,
                         'height' => 100,
@@ -112,6 +116,7 @@ return [
                 ],
             ],
         ],
+
     ],
     'buckets' => [
         'homepage' => [

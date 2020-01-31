@@ -43,19 +43,10 @@ class Work extends Model implements Sortable
         'cover' => [
             'default' => [
                 [
-                    'name' => 'landscape',
-                    'ratio' => 16 / 9,
+                    'name' => 'default',
+                    'ratio' => 0,
                 ],
-                [
-                    'name' => 'portrait',
-                    'ratio' => 3 / 4,
-                ],
-            ],
-            'mobile' => [
-                [
-                    'name' => 'mobile',
-                    'ratio' => 1,
-                ],
+
             ],
         ],
     ];
@@ -105,10 +96,6 @@ class Work extends Model implements Sortable
         }
 
         return ImageService::getTransparentFallbackUrl();
-    }
-
-    public function blocks() {
-        return $this->morphMany(Block::class, 'blockable')->orderBy('blocks.position', 'asc');
     }
 
     public function designers() {

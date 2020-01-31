@@ -1,13 +1,12 @@
 <?php
 
 
-namespace App\Models;
+namespace App\Helpers;
 
 
-class Block extends \A17\Twill\Models\Block
+class Video
 {
-    public function getYoutubeId() {
-        $youtubeUrl = $this->content['url'];
+    public static function getYoutubeId($youtubeUrl) {
         $queryParams = [];
 
         $urlParts = parse_url($youtubeUrl);
@@ -29,8 +28,7 @@ class Block extends \A17\Twill\Models\Block
         return false;
     }
 
-    public function getVimeoId() {
-        $vimeoUrl = $this->content['url'];
+    public static function getVimeoId($vimeoUrl) {
         $queryParams = [];
 
         $urlParts = parse_url($vimeoUrl);
