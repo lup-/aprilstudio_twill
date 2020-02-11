@@ -4,6 +4,9 @@ return [
     'enabled' => [
         'buckets' => true,
     ],
+    'frontend' => [
+        'views_path' => 'site',
+    ],
     "block_editor" => [
         'block_single_layout' => 'layouts.block',
         'blocks'              => [

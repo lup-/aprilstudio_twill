@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use A17\Twill\Models\Behaviors\HasBlocks;
+use A17\Twill\Models\Behaviors\HasRevisions;
 use A17\Twill\Models\Behaviors\HasTranslation;
 use A17\Twill\Models\Behaviors\HasSlug;
 use A17\Twill\Models\Behaviors\HasMedias;
@@ -15,7 +16,7 @@ use \ImageService;
 
 class Work extends Model implements Sortable
 {
-    use HasBlocks, HasTranslation, HasSlug, HasMedias, HasFiles, HasPosition, TaggableTrait;
+    use HasBlocks, HasTranslation, HasSlug, HasMedias, HasFiles, HasPosition, HasRevisions, TaggableTrait;
 
     protected $fillable = [
         'published',

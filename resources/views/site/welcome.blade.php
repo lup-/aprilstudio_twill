@@ -32,11 +32,11 @@
         </header>
         <main>
             @foreach ($favouriteWorks as $chunk)
-                @include('work_chunk', ['chunk' => $chunk, 'loop' => $loop])
+                @include('site.work_chunk', ['chunk' => $chunk, 'loop' => $loop])
             @endforeach
 
             @foreach ($otherWorks as $chunk)
-                @include('work_chunk', ['chunk' => $chunk, 'loop' => $loop])
+                @include('site.work_chunk', ['chunk' => $chunk, 'loop' => $loop])
             @endforeach
         </main>
 

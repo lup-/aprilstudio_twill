@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>AprilStudio: {{ $work->title }}</title>
+        <title>AprilStudio: {{ $item->title }}</title>
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="/css/frontend.css">
@@ -12,28 +12,28 @@
         <header class="container-fluid p-4">
             <div class="row">
                 <div class="col-md-6">
-                    <h1>{{ $work->title }}</h1>
+                    <h1>{{ $item->title }}</h1>
                 </div>
                 <div class="col-md-6">
-                    <h3>{{ $work->description}}</h3>
+                    <h3>{{ $item->description}}</h3>
                 </div>
             </div>
         </header>
         <main class="py-4 flex-fill">
-            @if ($work->casestudy)
+            @if ($item->casestudy)
             <div class="container-fluid px-4 mb-4">
                 <div class="row">
                     <div class="col">
-                        {!! $work->casestudy !!}
+                        {!! $item->casestudy !!}
                     </div>
                 </div>
             </div>
             @endif
 
-            {!! $renderedBlocks !!}
+            {!! $item->renderBlocks() !!}
         </main>
 
-        @if ($nextWork)
+        @if (isset($nextWork))
         <footer class="container-fluid pt-4 px-4 pb-0 next-work">
             <hr class="delimiter mb-4">
             <div class="row">
@@ -53,7 +53,7 @@
             </div>
             <div class="row image">
                 <a href="{{ $nextWork->getRelativeUrl() }}">
-                    <img src="{{$work->image('cover')}}" class="img-fluid">
+                    <img src="{{$nextWork->image('cover')}}" class="img-fluid">
                 </a>
             </div>
         </footer>

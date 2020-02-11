@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use A17\Twill\Http\Controllers\Admin\ModuleController;
 use App\Models\Work;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Session;
@@ -32,14 +33,14 @@ class WorkController
         $favouritedWorks = $this->getBucketWorks('home_favourite_works');
         $otherWorks = $this->getBucketWorks('home_other_works');
 
-        return view('welcome', [
+        return view('site.welcome', [
             'favouriteWorks' => $this->chunkModelArray($favouritedWorks, 5),
             'otherWorks'     => $this->chunkModelArray($otherWorks, 5),
         ]);
     }
 
     /**
-     * @param  string $slug
+     * @param string $slug
      * @return View
      */
     public function show($slug)
@@ -60,18 +61,8 @@ class WorkController
 
         $nextWork = Work::where('created_at', '>', $work->created_at)->first();
 
-        $renderedBlocks = $work->renderBlocks(false, [
-            'quote'            => 'blocks/quote',
-            'youtube'          => 'blocks/youtube',
-            'vimeo'            => 'blocks/vimeo',
-            'full_width_image' => 'blocks/full_width_image',
-            'fixed_image_grid' => 'blocks/fixed_image_grid',
-            'fluid_image_grid' => 'blocks/fluid_image_grid'
-        ]);
-
-        return view('work', [
-            'work'           => $work,
-            'renderedBlocks' => $renderedBlocks,
+        return view('site.work', [
+            'item'           => $work,
             'nextWork'       => $nextWork,
         ]);
     }
