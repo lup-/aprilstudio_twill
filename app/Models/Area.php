@@ -22,6 +22,7 @@ class Area extends Model implements Sortable
     public $translatedAttributes = [
         'title',
         'description',
+        'active',
     ];
 
     public $slugAttributes = [

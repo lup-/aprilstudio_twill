@@ -8,8 +8,4 @@ use Illuminate\Support\Facades\Config;
 class AreaController extends ModuleController
 {
     protected $moduleName = 'areas';
-
-    protected function getPermalinkBaseUrl() {
-        return $this->request->getScheme() . '://' . Config::get('app.url') . '/'.$this->moduleName.'/';
-    }
 }

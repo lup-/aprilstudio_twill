@@ -3,12 +3,12 @@
         @include('site.work_at_home', ['work' => $chunk[0], 'isEven' => $loop->even, 'isPrimary' => true])
         <div class="col-sm-6">
             <div class="row row-1-and-2">
-                @includeWhen(isset($chunk[1]), 'site.work_at_home', ['work' => $chunk[1] ?? [], 'isEven' => $loop->even, 'isPrimary' => false])
-                @includeWhen(isset($chunk[2]), 'site.work_at_home', ['work' => $chunk[2] ?? [], 'isEven' => $loop->even, 'isPrimary' => false])
+                @includeWhen(isset($chunk[1]), 'site.work_at_home', ['work' => $chunk[1] ?? [], 'isEven' => $loop->even, 'isPrimary' => false, 'alwaysShowTitle' => true])
+                @includeWhen(isset($chunk[2]), 'site.work_at_home', ['work' => $chunk[2] ?? [], 'isEven' => $loop->even, 'isPrimary' => false, 'alwaysShowTitle' => true])
             </div>
             <div class="row row-3-and-4">
-                @includeWhen(isset($chunk[3]), 'site.work_at_home', ['work' => $chunk[3] ?? [], 'isEven' => $loop->even, 'isPrimary' => false])
-                @includeWhen(isset($chunk[4]), 'site.work_at_home', ['work' => $chunk[4] ?? [], 'isEven' => $loop->even, 'isPrimary' => false])
+                @includeWhen(isset($chunk[3]), 'site.work_at_home', ['work' => $chunk[3] ?? [], 'isEven' => $loop->even, 'isPrimary' => false, 'alwaysShowTitle' => false])
+                @includeWhen(isset($chunk[4]), 'site.work_at_home', ['work' => $chunk[4] ?? [], 'isEven' => $loop->even, 'isPrimary' => false, 'alwaysShowTitle' => false])
             </div>
         </div>
     </div>

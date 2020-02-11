@@ -12,6 +12,8 @@ use A17\Twill\Models\Behaviors\HasPosition;
 use A17\Twill\Models\Behaviors\Sortable;
 use A17\Twill\Models\Model;
 use Cartalyst\Tags\TaggableTrait;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\DB;
 use \ImageService;
 
 class Work extends Model implements Sortable
@@ -27,9 +29,10 @@ class Work extends Model implements Sortable
     ];
 
     public $translatedAttributes = [
-         'title',
-         'description',
-         'casestudy'
+        'title',
+        'description',
+        'casestudy',
+        'active',
      ];
 
     public $slugAttributes = [
@@ -75,28 +78,25 @@ class Work extends Model implements Sortable
             ->select('works.*', 'features.position')
             ->where('features.bucket_key', '=', $bucketKey)
             ->where('features.featured_type', '=', 'works')
+            ->orderBy(DB::raw('ISNULL(features.position)'), 'ASC')
+            ->orderBy('features.position', 'ASC');
+    }
+
+    public function scopeWithBucketPositions($query) {
+        return $query
+            ->leftJoin('features', 'works.id', '=', 'features.featured_id')
+            ->select('works.*', 'features.position')
+            ->where(function ($query) {
+                $query->where('features.featured_type', '=', 'works')
+                      ->orWhereNull('features.featured_type');
+            })
+            ->orderBy(DB::raw('ISNULL(features.position)'), 'ASC')
             ->orderBy('features.position', 'ASC');
     }
 
     public function getRelativeUrl() {
         $activeSlug = $this->getActiveSlug();
-        return '/works/' . $activeSlug->slug;
-    }
-
-    public function rawImage($role, $crop = "default", $has_fallback = false, $media = null) {
-        if (!$media) {
-            $media = $this->findMedia($role, $crop);
-        }
-
-        if ($media) {
-            return ImageService::getRawUrl($media->uuid);
-        }
-
-        if ($has_fallback) {
-            return null;
-        }
-
-        return ImageService::getTransparentFallbackUrl();
+        return '/' . app()->getLocale() . '/works/' . $activeSlug->slug;
     }
 
     public function designers() {
@@ -113,5 +113,47 @@ class Work extends Model implements Sortable
 
     public function types() {
         return $this->belongsToMany(Type::class);
+    }
+
+    public function getNext() {
+        $allWorks = Work::withBucketPositions()
+            ->where('published', true)
+            ->whereHas('slugs', function (Builder $query) {
+                $query
+                    ->where('locale', '=', app()->getLocale())
+                    ->where('active', '=', 1);
+            })
+            ->get();
+        $firstWork = $allWorks[0];
+
+        $currentWorkHasPosition = $this->position !== NULL;
+
+        $nextWork = false;
+        foreach ($allWorks as $candidateWork) {
+
+            $candidateWorkHasPosition = $candidateWork->position !== NULL;
+            $bothWorksPositionedOnMain = $currentWorkHasPosition && $candidateWorkHasPosition;
+            $noneWorksPositionedOnMain = !$bothWorksPositionedOnMain;
+            $currentIsLastOnMainNextIsFirstUnpositioned = $currentWorkHasPosition && !$candidateWorkHasPosition;
+
+            if ($bothWorksPositionedOnMain && $this->position < $candidateWork->position) {
+                $nextWork = $candidateWork;
+                break;
+            }
+
+            if ($currentIsLastOnMainNextIsFirstUnpositioned) {
+                $nextWork = $candidateWork;
+                break;
+            }
+
+            if ($noneWorksPositionedOnMain && $this->created_at < $candidateWork->created_at) {
+                $nextWork = $candidateWork;
+                break;
+            }
+        }
+
+        return $nextWork
+            ? $nextWork
+            : $firstWork;
     }
 }

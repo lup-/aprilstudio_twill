@@ -25,7 +25,7 @@ class Designer extends Model implements Sortable
     public $translatedAttributes = [
          'title',
          'description',
-    //     'active',
+         'active',
     ];
 
     public $slugAttributes = [

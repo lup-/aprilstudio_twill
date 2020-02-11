@@ -3,7 +3,7 @@
         <div class="col-md-6"></div>
         <div class="col-md-6">
             <blockquote class="blockquote">
-                {{ $block->content['quote'] }}
+                {{ $block->translatedInput('quote') }}
             </blockquote>
         </div>
     </div>

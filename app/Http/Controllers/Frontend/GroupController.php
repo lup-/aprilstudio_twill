@@ -3,6 +3,7 @@ namespace App\Http\Controllers\Frontend;
 
 use A17\Twill\Models\Model;
 use App\Models\Work;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\View\View;
 
 class GroupController {
@@ -21,7 +22,12 @@ class GroupController {
         return $model
                     ->works()
                     ->with('blocks')
-                    ->where(['published' => 1])
+                    ->where('published', true)
+                    ->whereHas('slugs', function (Builder $query) {
+                        $query
+                           ->where('locale', '=', app()->getLocale())
+                           ->where('active', '=', 1);
+                    })
                     ->orderBy('created_at')
                     ->get();
     }
@@ -30,7 +36,7 @@ class GroupController {
      * @param  string $slug
      * @return View
      */
-    public function show($slug) {
+    public function show($lang, $slug) {
         $titleModel = $this->getModel($slug);
         if (!$titleModel) {
             abort(404);
@@ -44,7 +50,7 @@ class GroupController {
         }
         $work_chunks = array_chunk($works_array_of_models, $this->chunkSize);
 
-        return view('list', [
+        return view('site.list', [
             'title'       => $titleModel->title,
             'description' => $titleModel->description,
             'works'       => $works,

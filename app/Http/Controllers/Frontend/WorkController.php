@@ -43,27 +43,16 @@ class WorkController
      * @param string $slug
      * @return View
      */
-    public function show($slug)
-    {
-        $work = Work::forSlugIgnoreLocale($slug)->with('blocks')->first();
+    public function show($lang, $slug) {
+        $work = Work::forSlug($slug)->with('blocks')->withBucketPositions()->first();
 
         if (!$work) {
-            return response(view('errors.404'), 404);
+            abort(404);
         }
-
-        $slugLocale = $work->getSlugLocale($slug);
-        $localesDiffer = $slugLocale != app()->getLocale();
-
-        if ($localesDiffer) {
-            Session::put('applocale', $slugLocale);
-            app()->setLocale($slugLocale);
-        }
-
-        $nextWork = Work::where('created_at', '>', $work->created_at)->first();
 
         return view('site.work', [
             'item'           => $work,
-            'nextWork'       => $nextWork,
+            'nextWork'       => $work->getNext(),
         ]);
     }
 }
