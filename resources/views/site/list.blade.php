@@ -3,10 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>AprilStudio: {{ $title }}</title>
+        <meta name="p:domain_verify" content="6cc217c99f01ffe595cadc0c77cd4e97"/>
+        <title>Union⁴: {{ $title }}</title>
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="/css/frontend.css">
+        <link rel="stylesheet" href="/css/union.css">
+        <link rel="stylesheet" href="/css/mainpage.css">
     </head>
     <body>
         <header class="container-fluid p-4">

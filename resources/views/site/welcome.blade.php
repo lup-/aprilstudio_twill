@@ -3,16 +3,18 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>AprilStudio</title>
+        <meta name="p:domain_verify" content="6cc217c99f01ffe595cadc0c77cd4e97"/>
+        <title>Union⁴ дизайн сайтов и мобильных приложений</title>
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="/css/frontend.css">
+        <link rel="stylesheet" href="/css/union.css">
     </head>
     <body>
         <header class="container-fluid">
             <div class="row">
-                <div class="col-10">
-                    <h1>AprilStudio</h1>
+                <div class="col-10 logo">
+                    <h1>Union⁴</h1>
                 </div>
                 <div class="col-2">
                     <div class="dropdown">

@@ -1,0 +1,7 @@
+
+    @font-face {
+        font-family: "Gerbera-Light"; /* Гарнитура шрифта */
+        src: url(../fonts/Gerbera-Light.eot?) format("eot"), /* Путь к файлу со шрифтом */
+        url(../fonts/Gerbera-Light.woff) format("woff"), 
+        url(../fonts/Gerbera-Light.ttf) format("truetype");
+       }
