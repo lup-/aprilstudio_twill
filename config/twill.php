@@ -91,6 +91,16 @@ return [
                         ],
                     ],
                 ],
+                'mobile' => [
+                    [
+                        'name'      => 'mobile',
+                        'ratio'     => 0,
+                        'minValues' => [
+                            'width'  => 100,
+                            'height' => 100,
+                        ],
+                    ],
+                ],
             ],
         ]
     ],
@@ -99,6 +109,16 @@ return [
             'default' => [
                 [
                     'name'      => 'default',
+                    'ratio'     => 0,
+                    'minValues' => [
+                        'width'  => 100,
+                        'height' => 100,
+                    ],
+                ],
+            ],
+            'mobile' => [
+                [
+                    'name'      => 'mobile',
                     'ratio'     => 0,
                     'minValues' => [
                         'width'  => 100,
@@ -134,7 +154,7 @@ return [
                             'scopes' => ['published' => true],
                         ],
                     ],
-                    'max_items' => 10,
+                    'max_items' => 90,
                 ],
                 'home_other_works' => [
                     'name' => 'Home other works',

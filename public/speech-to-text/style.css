@@ -1,0 +1,142 @@
+html {width:100%; height:100%}
+body {color:#444; background-color:#FAFBF4; font:18px "PT Serif", "Times New Roman", Times, serif; line-height:125%; padding:0 20px; margin:0; height:100%; min-height:100%}
+a {color:#444; text-decoration:underline}
+a:hover {color:#444; text-decoration:none}
+p {padding:0; margin:0 0 24px 0} 
+img {border:none}
+h1 {color:#343434; font:normal 32px "PT Serif", Times, serif; padding:0; margin:6px 0 17px}
+h2 {color:#999; font:normal 14px "PT Serif", Times, serif; padding:0; margin:0}
+h3 {font-size:18px; font-weight:normal; padding:0; margin:44px 0 7px 0}
+h4 {font-size:18px; font-weight:normal; padding:0; margin:0}
+em {font-family:"Times New Roman", Times, serif}
+
+.fl {float:left}
+.fr {float:right}
+.clear {clear:both; height:0; font-size:0; line-height:0}
+.grey, a.grey, a.grey:hover {color:#999}
+
+.inner {margin:0 auto; width:960px}
+
+.footer {margin:0 auto; width:960px; font-size:16px; padding-bottom:45px}
+.footer p {padding:0; margin:0}
+.footer .email {margin-left:11px}
+.footer .fr {padding-top:20px}
+
+::-moz-selection {background:#FDC53D; color:#444; text-shadow:none}
+::selection {background:#FDC53D; color:#444; text-shadow:none}
+
+input[type="text"], input[type="password"], select, textarea {
+    background:none repeat scroll 0 0 #Fafbf5;
+    border:1px solid #CBCDCE;
+    border-radius:2px 2px 2px 2px;
+    margin:0;
+	box-shadow:0 0 3px #FDC53D;
+    -moz-box-shadow:0 0 3px #FDC53D; /* Р”Р»СЏ Firefox */
+    -webkit-box-shadow:0 0 3px #FDC53D; /* Р”Р»СЏ Safari Рё Chrome */
+}
+
+a.button, span.button, input[type="submit"], input[type="button"], button {
+    background-color:#FDC53D;
+    border:1px solid #FDC53D;
+    border-radius:2px 2px 2px 2px;
+    box-shadow:0 1px 1px #B0B1AD;
+    -moz-box-shadow:0 1px 1px #B0B1AD;
+    -webkit-box-shadow:0 1px 1px #B0B1AD;
+    color:#724400;
+    text-shadow:0 1px 0 #fff;
+    cursor:pointer;
+    font:bold 19px/125% "PT Serif","Times New Roman",Times,serif;
+    padding:4px 18px 6px 16px;
+	margin:0;
+	line-height:20px;
+	text-decoration:none;
+	position:relative}
+a.button:hover, button:hover {color:#000}
+
+.button.btngrey, button.btngrey {background-color:#EBECE6; border-color:#EBECE6; color:#444}
+.button.btngrey:hover, button.btngrey:hover, .button.btngrey.active, button.btngrey.active {box-shadow: 0 1px 1px #868781 inset}
+.button.btnactive, button.btnactive, .button.btnactive:hover {border-radius:0; border:none; padding:4px 22px 8px 17px; margin-top:1px; 
+    box-shadow:0 1px 1px #B0B1AD inset;
+    -moz-box-shadow:0 1px 1px #B0B1AD inset;
+    -webkit-box-shadow:0 1px 1px #B0B1AD inset}
+.button.wordtrans, button.wordtrans, .button.wordtrans:hover {background-color:#EBECE6; border-color:#EBECE6; color:#444; padding:0 5px 6px 5px; font-size:26px; line-height:100%}
+.button.btnbig, button.btnbig {font-size:23px}
+a.btnsmall, span.btnsmall {font-size:13px; padding:2px 10px;}
+span.btnsmall {cursor:default;}
+[class^="icon-"], [class*=" icon-"] {
+    background-image:url("img/icon.png");
+    background-position:0 0;
+    background-repeat:no-repeat;
+    display:inline-block;
+    height:20px;
+    line-height:20px;
+    margin-top:4px;
+	margin-right:3px;
+    vertical-align:text-top;
+    width:24px}
+.icon-share {
+    background-position:0 0;
+	position:absolute; top:1px; left:11px}
+.icon-share-grey {background-position:0 -22px; margin:3px -8px 0 -3px}
+.icon-sound {background-position:-29px -2px; margin:4px -8px 0 -3px; height:16px; width:20px}
+.icon-soundno {background-position:-29px -24px; margin:4px 12px 0 4px; height:16px; width:23px}
+.withicon {padding-left:39px}
+
+.leftblock {width:320px; position:relative}
+.rightblock {width:620px; margin-top:-10px}
+.author {position:absolute; left:0; top:0; width:320px}
+.author img {float:left; margin-right:13px}
+.author h4 {margin-top:-4px; margin-bottom:-2px}
+.hello img:first-child {margin-top:35px}
+.hello img {margin:-4px 0 0 170px}
+.hello p {margin-bottom:13px; font-size:24px; width:260px; line-height:110%}
+.chooselang {margin-bottom:-1px; margin-top:5px; font-size:13px;}
+.chooselang a {margin:0 10px; text-decoration:none;}
+.chooselang a:hover {color:#000;}
+.your-text {background:url("img/shadow-tools.png") no-repeat scroll 50% 100%; margin-bottom:10px; padding-bottom:8px; margin-left: -31px; width:994px; padding-left:31px; display:none;}
+.your-text p {padding:0; margin:0}
+.your-text textarea {color:#444444; font:22px "PT Serif", "Times New Roman", Times, serif; line-height:140%; width:925px; height:286px; margin-top:7px; margin-bottom:10px; padding:0 6px}
+.share {background:url("img/shadow-tools.png") no-repeat scroll 50% 100%; margin-bottom:10px; padding-bottom:8px; margin-left: -31px; width:994px; padding-left:31px; display:none;}
+.share p {padding:0; margin:0}
+.share textarea {color:#444444; font:22px "PT Serif", "Times New Roman", Times, serif; line-height:140%; width:925px; height:186px; margin-top:7px; margin-bottom:10px; padding:0 6px}
+form.totrans {margin:0 0 25px 0; padding:0}
+.ques {font-size:16px; width:200px}
+.translate-text {font-size:40px; font-family:"PT Serif", "Times New Roman", Times, serif;  line-height:140%; position:relative}
+.translate-text em { position:absolute; left:9px; top:41px; color:#979793; font-size:14px; margin-bottom:9px; line-height:100%}
+.translate-text span {position:relative; cursor:pointer; padding:0 8px 15px; margin:0 -8px 0}
+.translate-text span:hover {color:#FDC53D;}
+.translate-text .active {
+    background-color:#FDC53D;
+    border:none;
+    border-radius:7px ;
+    box-shadow:0 2px 1px #BA902D inset;
+    -moz-box-shadow:0 2px 1px #BA902D inset;
+    -webkit-box-shadow:0 2px 1px #BA902D inset;
+    cursor:pointer;
+	text-decoration:none}
+.translate-text .active em {color:#444}	
+.translate-text span.active:hover {color:#444;}
+
+	
+.yandex {width:385px}
+.tools {background:url("img/shadow-tools_help.png") no-repeat scroll 50% 100%; padding-bottom:23px; width:994px; margin-left:-17px; margin-top:-30px; padding-bottom:11px; height:187px}
+.tools .shadow {background-color:#FAFBF4; padding-top:19px; height:51px}
+.tools.freeze {position:fixed; z-index:50; top:0; margin-top:0}
+.wordblock {width:500px; padding-left:17px; margin-top:-15px}
+.shadow .wordblock {margin-top:-11px}
+.hearblock {width:425px; text-align:right; padding-right:36px}
+
+.playbtn {
+    background-image:url("img/icon.png");
+    background-position:-58px 0;
+    background-repeat:no-repeat;
+	cursor:pointer;
+    display:inline-block;
+    height:28px;
+    line-height:28px;
+    margin-top:14px;
+	margin-right:7px;
+    vertical-align:text-top;
+    width:28px}
+.playbtn:hover {background-position:-92px 0}
+.playbtn.pause {background-position:-126px 0}

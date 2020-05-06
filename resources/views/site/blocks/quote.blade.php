@@ -1,10 +1,7 @@
 <section class="container-fluid">
     <div class="row">
-        <div class="col-md-6"></div>
-        <div class="col-md-6">
-            <blockquote class="blockquote">
+        <div class="col-md-12 blockquoteText">
                 {{ $block->translatedInput('quote') }}
-            </blockquote>
         </div>
     </div>
 </section>

@@ -1,7 +1,520 @@
-
-    @font-face {
-        font-family: "Gerbera-Light"; /* Гарнитура шрифта */
-        src: url(../fonts/Gerbera-Light.eot?) format("eot"), /* Путь к файлу со шрифтом */
-        url(../fonts/Gerbera-Light.woff) format("woff"), 
-        url(../fonts/Gerbera-Light.ttf) format("truetype");
+@font-face {
+        font-family: "Gerbera-Light"; 
+        src: url(/fonts/Gerbera-Light.eot?) format("eot"), 
+        url(/fonts/Gerbera-Light.woff) format("woff"), 
+        url(/fonts/Gerbera-Light.ttf) format("truetype");
        }
+
+* {
+        font-family: "Gerbera-Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }  
+html, body {
+        position: relative;
+        width: 100%;
+        /*height: 100%;*/
+    }
+
+        html {font-family: sans-serif; background-color: #fff; }
+        body {color: #2D2D2D; line-height: 140%; font-size: 16px; font-family: "Gerbera-Light", sans-serif; padding: 0; margin: 0; background-color: #fff;}
+        a {color: #2D2D2D; text-decoration: none;}
+        a:hover {color:#000; text-decoration: none;}
+        p {padding: 0; margin: 5px 0;}
+        h1 {font-size: 78px; font-weight: normal; line-height: 120%; padding: 0; margin: 0;}
+        .clear {clear: both; height: 0; font-size: 1px;}
+        .nowrap {white-space: nowrap;}
+
+/*  ---------------- night styles ------------------ */
+html {transition: 1s background, color;}
+.night .mode_moon svg {stroke: #fff;}
+.night header nav a.active {background-color: #F13A02; color:#E8E7E1; border-radius: 8px;}
+.night .bubble {color: #E8E7E1; border-color: #5C5B51;}
+.night .bubbleblock svg {stroke: #5C5B51; fill: #303030;}
+.night .bubbleblock svg.bubble_whiteline {stroke: #303030;}
+.night .menublock.rotate a.active, .night .menublock.rotate a.active:hover {opacity: 0.8;}
+.night .logo .logo_forNight {display: block;}
+.night .logo .logo_forDay {display: none;}
+
+.night .btn-primary,
+.night .btn_white {border-color: #fff;}
+
+.night .btn_white:hover,
+.night .btn_white a:hover,
+.night .btn_white:hover a {border-color: #F13A02;}
+
+.night .btn-primary,
+.night .btn-primary:hover {background-color: #fff;}
+
+.night,
+.night header,
+.night .bubble,
+.night .btn_white,
+.night body,
+.night body.welcomePage {background-color: #303030;}
+
+.night .btn-primary:hover {background-color: #F13A02;}
+
+.night body,
+.night body.welcomePage,
+.night a,
+.night .btn-primary,
+.night .btn-primary:hover,
+.night .menublock.rotate a,
+.night .footer_deg90 nav a,
+.night h3,
+.night .btn_white:hover,  
+.night .btn_white:hover a, 
+.night .btn_white a:hover,
+.night .next-work h6,
+.night .innerH1block h3,
+.night .next-work h4 a, 
+.night .next-work h4 a:hover,
+.night main.innerProjectPage .innerCaseStudyText p {color:#51565C;}
+
+.night h1,
+.night a:hover,
+.night .btn_white,
+.night .btn_white a,
+.night .btn-primary:hover,
+.night .btn-primary:hover a,
+.night .news a:hover h3,
+.night .mode_descr::after,
+.night .menublock.rotate a.active, 
+.night .menublock.rotate a.active:hover,
+.night .footer_deg90 nav.lang a.active,
+.night .footer_deg90 nav.lang a.active:hover,
+.night .next-work h2 a, 
+.night .next-work h2 a:hover {color: #fff;}
+
+.night .footer_deg90 nav a:hover,
+.night .menublock.rotate a:hover {color:#F13A02;}
+
+/*  ---------------- \ night styles ------------------ */
+/*
+body.welcomePage {background-color: #fff; background-image: url(/images/bg_red.png); background-repeat: repeat-x; background-position: 0 0;} */
+body.welcomePage {background-color: #fff;}
+
+        header {width: 100%;}
+        header nav {text-transform:uppercase; text-align: right; letter-spacing: 2px; white-space: nowrap; margin-top: 63px; margin-right: 80px;}
+        header nav a {color:#5C5B51; padding:11px 10px 7px 11px; margin: 0 2px; line-height: 300%;}
+        header nav a:hover {text-decoration: none; color:#F13A02; }
+        header nav a.active {background-color: #F13A02; border-radius: 8px; color:#fff; cursor: text;}
+        header nav a.active:hover {text-decoration: none; color:#fff;}
+        header .menublock.rotate nav {text-align: left;}
+        .instantviewText {display: none;}
+        .menublock.rotate {
+                -webkit-transform: rotate(-90deg);
+                -moz-transform: rotate(-90deg);
+                -ms-transform: rotate(-90deg);
+                -o-transform: rotate(-90deg);
+                transform: rotate(-90deg);
+                -webkit-transform-origin: left bottom;
+                -moz-transform-origin: left bottom;
+                -o-transform-origin: left bottom;
+                -ms-transform-origin: left bottom;
+                transform-origin: left bottom;
+                margin-bottom: 0px;
+                margin-left: 91px;
+                width: 500px;
+                bottom: 0;
+                height: 100px;
+                left: 0;
+                margin-bottom: 47px;
+                margin-left: 85px;
+                top: auto;
+                bottom:0;
+        }
+
+        .logo {position: fixed; top: 0; z-index: 1001;}
+        .logo.rotate {
+                -webkit-transform: rotate(-90deg);
+                -moz-transform: rotate(-90deg);
+                -ms-transform: rotate(-90deg);
+                -o-transform: rotate(-90deg);
+                transform: rotate(-90deg);
+                left: 0;
+                -webkit-transform-origin: left top;
+                -moz-transform-origin: left top;
+                -o-transform-origin: left top;
+                -ms-transform-origin: left top;
+                transform-origin: left top;
+                margin-top: 219px;
+                margin-left: 50px;}
+        .logo.rotate img {margin:0;}
+       /* .logo img {float: left; margin:79px 0px 0px 80px; width: 146px;} */
+        .logo .logo_forDay {display: block;}
+        .logo .logo_forNight {display: none;}
+        .copy {color: #5C5B51; opacity: 0.5; margin-top: 3px;}
+
+        main.welcomePage {padding-left:114px; padding-right:65px; position: relative;}
+        main {margin: 0 auto 0 auto; padding: 0 20px; font-size: 28px; line-height: 150%;}
+        main .leadtext {font-size: 28px;}
+        main.width850 {max-width: 850px;}
+
+        footer {color:#5C5B51; font-family: "Gerbera-Light", sans-serif; margin: 20px 80px 0 80px; position: relative;}
+        footer .leftblock {float: left;}
+        footer nav a {color:#5C5B51; margin-right: 10px;}
+        footer nav a:hover {color:#F13A02; text-decoration: none;}
+        footer nav {font-size: 18px;}
+
+        .footer_deg90 {position:fixed;
+                -webkit-transform: rotate(-90deg);
+                -moz-transform: rotate(-90deg);
+                -ms-transform: rotate(-90deg);
+                -o-transform: rotate(-90deg);
+                transform: rotate(-90deg);
+                right: 0;
+                bottom:365px;
+                -webkit-transform-origin: right bottom;
+                -moz-transform-origin: right bottom;
+                -o-transform-origin: right bottom;
+                -ms-transform-origin: right bottom;
+                transform-origin: right bottom;
+                margin-right: 15px;
+        }
+        .footer_deg90 nav {text-transform: uppercase; letter-spacing: 2px; white-space: nowrap; display: inline; font-size: 13px;}
+        .footer_deg90 nav.lang {margin-right: 42px; margin-left: 7px;}
+        .footer_deg90 nav.lang a:hover {color:#F13A02; text-decoration: none;}
+        .footer_deg90 nav.lang a {margin-right: 6px;}
+        .footer_deg90 nav.lang a.active, .footer_deg90 nav.lang a.active:hover {cursor:text; color:#2D2D2D}
+        .footer_deg90 .moon_pic {display: none;}
+        .footer_deg90 .sun_pic {display: block;}
+        .night .footer_deg90 .moon_pic {display: block;}
+        .night .footer_deg90 .sun_pic {display: none;}
+        form.user_mode {display: inline;}
+        #user_mode { display: none; font-size: 1px; line-height: 1px;}
+        #user_mode:checked + label {animation-delay: .07s;}
+        label[for="user_mode"]:hover {cursor: pointer;}
+
+        #bubble_container {opacity: 0;  -webkit-transition: opacity 1s ease-out 0.5s; -moz-transition: opacity 1s ease-out 0.5s; -o-transition: opacity 1s ease-out 0.5s; transition: opacity 1s ease-out 0.5s;}
+        .bubbleblock {position: relative; padding-bottom: 20px; float: right;}
+        .bubble {position: relative; background-color: #fff; width: 536px; padding: 10px 5px 10px 10px; border-radius: 15px; line-height: 130%; border: solid 2px #E8E7E1; font-size: 20px; margin: 0; -webkit-border-radius: 10px; -moz-border-radius: 10px;}
+        .bubble img {float: left; border-radius: 60px;}
+        .bubble p {margin-left: 80px;}
+        #bubbletale {position: absolute; right: 9px; bottom: 2px; width: 20px; height: 20px;}
+        .btn_orderblock_forbubble_container {float: right; padding-bottom: 4px;}
+        .bubbleblock svg {stroke: #E8E7E1; fill: #fff; position: absolute; right: 9px; bottom: 3px;}
+        .bubbleblock svg.bubble_whiteline {stroke: #fff; position: absolute; right: 10px; bottom: 22px; }
+
+        .innerH1block h1.bigH1, .bigH1 {font-size: 72px;}
+
+        .owl-carousel {margin-bottom: 33px;}
+        .owl-carousel .owl-nav {font-size: 60px; color: #fff;}
+        .owl-carousel .owl-nav button.owl-prev,
+        .owl-carousel .owl-nav button.owl-next {position: absolute; top: 0; outline: none; height: 100%;}
+        .owl-carousel .owl-nav button.owl-prev {left: 28px;}
+        .owl-carousel .owl-nav button.owl-next {right: 28px;}
+        .owl-carousel .owl-dots {position: absolute; right: 28px; bottom: 22px;}
+        .owl-carousel button.owl-dot {background-color: transparent; height: 12px; width: 12px; border-radius: 12px; border: solid 2px #fff; margin: 0 0 0 8px; outline: none;}
+        .owl-carousel button.owl-dot.active  {background-color: #fff;}
+
+
+
+/*  ---------------- styles for switcher day-night mode ------------------ */
+.switcher_block {width: 120px; font-size: 0; color: #AEADA8; line-height: 1px;}
+.switcher_block td {border-collapse: collapse;}
+.switcher {font-size: 1px; height: 20px; width: 29px; line-height: 1px;}
+.mode_moon {text-align: right; padding-right: 4px; width: 30px;}
+.mode_moon svg {stroke: #5C5B51;}
+.mode_sun {text-align: left; padding-left: 2px; width: 30px;}
+.mode_switcher {text-align: center; width: 29px;}
+.mode_descr {text-align: center; padding-top: 12px; font-size: 16px; line-height: 100%;}
+.mode_descr::after {content: "Day mode";}
+
+/*  ---------------- animation switcher day-night mode ------------------ */
+label[for="mode"] {margin: 0; padding: 0; display: block; padding-top: 55%; position: relative;}
+label[for="mode"]:hover {cursor: pointer;}
+label[for="mode"] b {display: block; width: 36px; height: 20px; border: solid 2px  #5C5B51; background-color: #fff; border-radius: 10px; padding: 0; margin: 0;	position: absolute; top: 0; transition: .8s;}
+label[for="mode"] span {position: absolute;display: block;width: 10px;height: 10px; background: #5C5B51;top: 5px;left: 22px;border-radius: 50%;}
+#mode { display: none; font-size: 1px; line-height: 1px;}
+#mode:checked + label span {animation: sideslide .8s forwards; background: #fff;}
+#mode:checked + label span.follower {animation-delay: .07s;}
+#mode:checked + label b {background-color:#303030; display: block;}
+@keyframes sideslide {
+		0% {transform: translateX(0) scale(1);}
+		50% {transform: translateX(-50%) scale(.75);}
+		100% {transform: translateX(-16px) scale(1);}		
+}
+/*  ---------------- \ animation switcher day-night mode ------------------ */
+
+
+
+
+#btn_orderblock {position: fixed; right: 72px; top:69px; z-index: 5000;}
+.innertext p img {max-width: 100%;}
+#night_switcher_block {position: absolute; right: 0; width: 116px; top: 0; z-index: 1000;}
+#btn_orderblock_forbubble {float:right; margin-bottom: 0; margin-top: 6px;}
+.menublock {position: fixed; top: 0; z-index: 1001; right: -10px;}
+
+#fotmenu_smallscreen {display: none; font-size: 1px; line-height: 1px; margin-bottom: 3px;}
+#fotmenu_smallscreen a {margin-right: 6px;}
+
+.cookies {position: fixed; display:flex; align-items:center; justify-content:center; z-index: 150; bottom: 60px; font-size: 20px; left: 0; margin: 0 50px; margin: 0 auto; width: 100%;} 
+.cookies p {background-color: #fff; padding: 10px 10px 10px 20px; border-radius: 60px; box-shadow: 0 0 5px #777; font-size: 20px; box-shadow: 0 0 5px #777;}
+.cookies_orange p {background-color: #FF3F05; color: #fff; padding-right: 20px;}
+.cookies_orange p a, .cookies_violet p a:hover  {text-decoration: none; color: #fff;}
+
+.lead_welcome {padding:72px 72px 0 130px;}
+
+.lead {background:#FF3F05 url(/images/bg_heart.png) no-repeat 50% 0; color:#fff; font-size: 22px; padding: 467px 80px 34px 80px;}
+.lead h1 {font-size: 72px; line-height: 105%; margin: 0 0 6px 0; padding: 0;}
+.lead ul.AreasList a {color:#fff; border-bottom-color: #fff;}
+.lead ul.AreasList a:hover {color:#fff;}
+.lead_redlinebg {position: absolute; top:0; left:0; width: 100%; height:40px; background-color: #FF3F05;}
+
+ul.AreasList {max-width: 925px; padding: 0; margin: 0; font-size: 22px;}
+ul.AreasList li {padding: 0 10px 0 0;display: inline; white-space: nowrap; line-height: 140%;}
+ul.AreasList a {text-decoration: none; border-bottom: solid 1px;}
+ul.AreasList a:hover {text-decoration: none; border: none;}
+ul.AreasList a.active {text-decoration: none; border: none; color:#FF3F05;}
+.innerH1block ul.AreasList {padding-top: 9px; padding-bottom: 25px; margin-right: 240px;}
+
+.work-chunk {padding: 0px 0 50px 0;}
+
+/* ------------- main welcome page works as news ------------- */
+.news {width: 100%; z-index: 10;}
+.news a:hover {color: #FF3F05;  z-index: 10;}
+.news_item img {width:100%;  z-index: 10;}
+.news_time {color:#8D8B8B;}
+.news h2 {padding:0 12px 18px 12px; margin:0;}
+.news h3 {font-size:20px; padding:0; margin:11px 0 11px 2px;}
+.news_text p {margin-bottom:10px;}
+.news.news_long {margin-top:0;}
+
+.news_item_long {width:636px; border-bottom:#D8D8D8 1px solid; padding-bottom:13px; margin-bottom:22px}
+.news_item_long h3 {font-size:30px} 
+.grid li a {padding: 0 16px 12px 16px;}
+/* fluid 3 columns */
+.grid-sizer, .grid-item {width: 33%;}
+/* style for isPrimary photo */
+.grid-itemPrimaryWidth {width: 33%;}
+/* ------------- \ main welcome page works as news ------------- */
+
+main.listblade {margin: 0 45px 0 95px;}
+/* ------------- innet 1 project page ------------- */
+.innerH1block {margin-left: 130px; margin-right: 72px; padding: 57px 0 0 0}
+.innerH1block h1 {font-size: 28px; margin: 10px 0 0 0;}
+.innerH1block h3 {font-size: 20px; color: #5C5B51;}
+
+main.innerProjectPage {padding:0; margin: 0 72px 0 130px}
+main.innerProjectPage .innerCaseStudyText p {width:70%; font-size: 20px; color: #5C5B51; padding: 0; margin: 0 0 5px 0; line-height: 130%;}
+main.innerProjectPage .innerCaseStudyText {margin-bottom: 10px;}
+main.innerProjectPage .container-fluid.mb-4 {}
+
+.blockquoteText {font-size: 20px; color: #5C5B51; margin: 15px 0;}
+footer.innerNextWork {padding-left: 130px; padding-right: 72px; margin: 0;}
+footer.innerNextWork .btn-link {color: #5C5B51; opacity: 0.5;}
+
+.next-work {font-size: 20px; color: #5C5B51;}
+.next-work h2 {margin-top:0; margin-bottom: 0; padding: 2px 0 2px 0; line-height: 100%;}
+.next-work h2 a, .next-work h2 a:hover {font-size: 28px; color: #2D2D2D; font-weight: normal; text-decoration: none;}
+.next-work h4 {margin-bottom: 18px; max-width: 660px;}
+.next-work h4 a, .next-work h4 a:hover {font-size: 20px; color: #5C5B51; font-weight: normal; text-decoration: none;}
+.next-work h6 {font-size: 20px; color: #5C5B51; font-weight: normal; text-decoration: none; margin-top: 28px; margin-bottom:4px;}
+.next-work .delimiter {margin-bottom: 80px;}
+.next-work .image {height:220px; max-height: 220px;}
+.next-work .image a {display: block; height:100%; width: 100%;}
+.next-work .image div  {height:100%; width: 100%; background-size: 100% auto;}
+.next-work_info {float:left; width:50%; max-width: 660px;}
+.next-work_btn {float:right; width:50%; text-align: right;}
+.next-work_btn .btn {margin-top: 46px;}
+
+/* ------------- \ innet 1 project page ------------- */
+
+@media (min-width: 1550px) {
+        /* fluid 4 columns */
+        .grid-sizer, .grid-item {width: 25%;}
+}
+@media (max-width: 1300px) {
+        #night_switcher_block {right: 0; width: auto; margin-right: 0;}
+        .btn_orderblock_forbubble_container {float: none; padding-bottom: 0;}
+        #btn_orderblock_forbubble {margin-bottom: 27px;}
+}
+@media (max-width: 1020px) {
+        main.innerProjectPage .innerCaseStudyText p {width:80%;}
+
+        .owl-carousel .owl-dots {right: 10px; bottom: 10px;}
+        .owl-carousel .owl-nav button.owl-prev {left: 10px;}
+        .owl-carousel .owl-nav button.owl-next {right: 10px;}
+        .owl-carousel button.owl-dot {height: 9px;
+                width: 9px;
+                border-radius: 9px;}
+        .footer_deg90 {margin-right:0; bottom: 280px;}
+        .footer_deg90 nav {font-size: 10px;}
+        .footer_deg90 nav.lang {margin-right: 14px;}
+        .menublock.rotate {width: 100%;}
+        .menublock.rotate nav {padding: 10px 0 0 29px;}
+        .WorkListPage .menublock.rotate nav {padding-left: 40px;}
+        .logo.rotate {margin-left:40px; margin-top: 40px;}
+        .next-work h6 {margin-top: 30px;}
+        .next-work_btn .btn {margin-top: 23px;}
+
+        .innerH1block {padding-top: 0;}
+        .lead_welcome {padding: 0 40px 0 40px;}
+        main.listblade {margin: 0 10px 0 5px;}
+        #btn_orderblock {top:39px; right: 40px;}
+        footer, .innerH1block, main.innerProjectPage {margin-left: 40px; margin-right: 40px;}
+        /* fluid 2 columns */
+        .grid li {width: 50%;}
+
+
+        .logo {position: relative;}
+        .menublock {position: relative;}
+        header nav {margin: 0;}
+        .menublock.rotate {
+                        -webkit-transform: none;
+                        -moz-transform: none;
+                        -ms-transform: none;
+                        -o-transform: none;
+                        transform: none;
+                        -webkit-transform-origin: left bottom;
+                        -moz-transform-origin: left bottom;
+                        -o-transform-origin: left bottom;
+                        -ms-transform-origin: left bottom;
+                        transform-origin: left bottom;
+                        width: auto;
+                        bottom: 0;
+                        height: auto;
+                        top: auto;
+                        left: auto;
+                        right:0;
+                        float: none;
+                        margin: 0;
+                }
+
+                .logo.rotate {
+                        -webkit-transform: none;
+                        -moz-transform: none;
+                        -ms-transform: none;
+                        -o-transform: none;
+                        transform: none;
+                        left: 0;
+                        -webkit-transform-origin: left top;
+                        -moz-transform-origin: left top;
+                        -o-transform-origin: left top;
+                        -ms-transform-origin: left top;
+                        transform-origin: left top;
+        }
+        .logo {margin-left: 40px;}
+        .logo img {margin-left:0;}
+        main.welcomePage {padding-left: 24px; padding-right: 24px;}
+        footer.innerNextWork {padding-left: 40px; padding-right: 40px; margin: 0;}
+        .cookies p {border-radius: 30px; font-size: 14px; margin: 0 40px; text-align: center;}
+        .cookies p span {white-space: nowrap;}
+        .cookies p span.btnsblock {white-space: nowrap;}
+        .cookies .btn_sm {font-size: 12px;}
+        .lead h1 {font-size: 62px;}
+        .lead {padding-left: 40px; padding-right: 40px;}
+}
+
+@media (max-width:640px) {
+        main.innerProjectPage .innerCaseStudyText p {width:100%;}
+        .WorkListPage #btn_orderblock {margin-left: 15px;}
+        .lead_welcome {padding: 0 20px 0 20px;}
+        /* fluid 1 column */
+        .grid li {width: 100%;}
+        .cookies p {padding: 10px 15px;}
+        .lead h1 {font-size: 47px;}
+        
+        ul.AreasList li {display: block;}
+        .next-work_info {width: 100%; float:none;}
+        .next-work_btn {display: none;}
+        .next-work h6 {margin-top: 0;}
+        .next-work .image {height: 100px;}
+        .owl-carousel .owl-dots {right: 10px; bottom: 10px;}
+        .owl-carousel .owl-nav button.owl-prev {left: 10px;}
+        .owl-carousel .owl-nav button.owl-next {right: 10px;}
+        .owl-carousel button.owl-dot {height: 9px;
+                width: 9px;
+                border-radius: 9px;}
+        .footer_deg90 {margin-right:-5px; bottom: 280px;}
+        .footer_deg90 nav { font-size: 10px;}
+        .footer_deg90 nav.lang {margin-right: 14px;}
+        #btn_orderblock {position: relative; top: 0; right: 0;}
+        .menublock.rotate {width: 100%; width: auto;}
+        .menublock.rotate nav {padding: 10px 0 0 9px;}
+        .WorkListPage .menublock.rotate nav {padding-left: 20px;}
+        .logo.rotate {margin-left:20px}
+        #fotmenu_bigscreen {display: none;}
+        #fotmenu_smallscreen {display: block;}
+        .bubble {width: auto;}
+        header nav {margin-right: 20px;}
+        .bubble img {float: none;}
+        .bubble p {margin-left: 5px;}
+        p {font-size: 16px;}
+        main {margin-top: 5px; padding: 0;}
+        main .leadtext {font-size: 20px; line-height: 140%;}
+        main.innertext {line-height: 90%;}
+        .bubble {font-size: 16px;}
+        h1 {font-size: 32px;}
+        header nav {font-size: 14px;margin-top: 0;}
+        .bubble .ava {width: 42px; height: 42px;}
+        header {padding-top: 0px;}
+        .logo {margin-left: 21px;}
+        .logo img {width: 115px; margin-top: 0;}
+        .cookies_violet {width: 100%; left: auto; margin-left: 0;}
+
+        main.welcomePage {padding-left: 6px; padding-right:6px;}
+        .menublock {margin-top: 40px;}
+        .logo {margin-top: 40px;}
+
+        .innerH1block, main.innerProjectPage {margin-left: 20px; margin-right: 20px;}
+        footer.innerNextWork {padding-left: 20px; padding-right: 20px;}
+        .lead {padding-top:300px; padding-left: 20px; padding-right: 20px;}
+        .lead h1 {font-size: 43px;}
+        .menublock {right: -8px;}
+
+        .footer_deg90 {
+                -webkit-transform: none;
+                -moz-transform: none;
+                -ms-transform: none;
+                -o-transform: none;
+                transform: none;
+                left: 0;
+                bottom: 0;
+                position: relative;
+                -webkit-transform-origin: left top;
+                -moz-transform-origin: left top;
+                -o-transform-origin: left top;
+                -ms-transform-origin: left top;
+                transform-origin: left top;
+                margin-bottom: 40px;
+                text-align: right;}
+     
+
+}
+@media (max-width: 768px) and (orientation: landscape) {
+   
+}
+@media (max-width: 500px) {
+        .cookies p span {white-space: normal;}
+        .cookies p {line-height: 130%;}
+        .cookies p span.btnsblock {line-height: 290%;}
+
+}
+
+/**/
+.workItem_container {
+        background-size: cover;
+        background-position: center;}
+.workItem_picture {
+                display: block;
+                height: 0;
+                padding-bottom: 62.9032258065%;
+                width: 100%;
+                overflow: hidden;
+                position: relative;
+                background-size: cover;
+                background-position: center;}
+
+@media (min-width: 576px) {
+        .d-sm-flex.d-none {display: none!important;}
+}
+
+
+
+main.py-4.flex-fill .container-fluid {padding-right: 0; padding-left: 0;}
+footer .row {margin-right: 0; margin-left: 0;}
+footer .px-4 {padding-right: 20px!important;}
+footer .row .col-md-6, footer .row .col-12 {padding-left:0;}
+
+
