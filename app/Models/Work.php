@@ -25,7 +25,11 @@ class Work extends Model implements Sortable
         'title',
         'description',
         'position',
-        'casestudy'
+        'casestudy',
+        'line_classes',
+        'next_classes',
+        'page_classes',
+        'page_background'
     ];
 
     public $translatedAttributes = [
@@ -46,11 +50,17 @@ class Work extends Model implements Sortable
     public $mediasParams = [
         'cover' => [
             'default' => [
-                [
-                    'name' => 'default',
-                    'ratio' => 0,
-                ],
-
+                [ 'name' => 'default', 'ratio' => 0 ],
+            ],
+        ],
+        'line_photo' => [
+            'default' => [
+                [ 'name' => 'default', 'ratio' => 0 ],
+            ],
+        ],
+        'logo' => [
+            'default' => [
+                [ 'name' => 'default', 'ratio' => 0 ],
             ],
         ],
     ];

@@ -12,8 +12,12 @@
         <link rel="stylesheet" href="/css/buttons.css">
         <link rel="stylesheet" href="/css/bootstrap-modal.css">
     </head>
-    <body class="d-flex flex-column OneWorkPage pr_mediamarkt">
-    
+    <body class="d-flex flex-column OneWorkPage {{$item->page_classes}}"
+        @if ($item->page_background)
+            style="background: {{$item->page_background}}"
+        @endif
+    >
+
 <img src="{{$item->image('cover')}}" alt="" class="top_bg">
 <!-- page for 1 product  -->
 
@@ -22,11 +26,9 @@
             <a href="/"><img src="/images/logounion8_white.svg" alt="Union8"></a>
         </div>
 
-
         <div class="nav-mobile nav-mobile_color_blue nav-mobile_right visible-xs_flex" data-toggle="modal" data-target="#menuModal">
                 <span></span>
         </div>
-
 
         <div class="menublock rotate">
             <nav>
@@ -57,10 +59,10 @@
         </div>
 
         <main class="py-4 flex-fill innerProjectPage">
-        
+
             @if ($item->casestudy)
                     <div class="innerCaseStudyText">
-                        {!! $item->casestudy !!} 
+                        {!! $item->casestudy !!}
                     </div>
             @endif
 
@@ -75,7 +77,7 @@
         <footer class="">
             <!-- next-work block -->
             @if (isset($nextWork))
-                <section class="nextWorkBlock vedomosti" style="background-image: url({{$nextWork->image('cover')}});">
+                <section class="nextWorkBlock {{$nextWork->next_classes}}" style="background-image: url({{$nextWork->image('cover')}});">
                     <div class="shadow"></div>
                     <div class="textalign_center showmore s22">Далее</div>
                     <div class="textalign_center brand_logo"><a href="{{ $nextWork->getRelativeUrl() }}"><img alt="{{ $nextWork->title }}" src="http://aprilstudio.ru/imgs/projects/vedomosti/logo.png"></a></div>
@@ -86,7 +88,7 @@
                 <!--
                 <h6>@lang('frontend.next_work'):</h6>
                 <h2>{{ $nextWork->title }}</h2>
-                <h4><a href="{{ $nextWork->getRelativeUrl() }}">{{ $nextWork->description}}</a></h4> 
+                <h4><a href="{{ $nextWork->getRelativeUrl() }}">{{ $nextWork->description}}</a></h4>
                 <img src="{{$nextWork->image('cover')}}" alt="">
                 -->
             <!-- \ next-work block -->

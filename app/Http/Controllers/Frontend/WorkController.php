@@ -21,21 +21,13 @@ class WorkController
                         ->get();
     }
 
-    private function chunkModelArray($models, $chunkSize) {
-        $array_of_models = [];
-        foreach ($models as $model) {
-            $array_of_models[] = $model;
-        }
-        return array_chunk($array_of_models, $chunkSize);
-    }
-
     public function index() {
         $favouritedWorks = $this->getBucketWorks('home_favourite_works');
         $otherWorks = $this->getBucketWorks('home_other_works');
 
         return view('site.welcome', [
-            'favouriteWorks' => $this->chunkModelArray($favouritedWorks, 5),
-            'otherWorks'     => $this->chunkModelArray($otherWorks, 5),
+            'favouriteWorks' => $favouritedWorks,
+            'otherWorks'     => $otherWorks,
         ]);
     }
 

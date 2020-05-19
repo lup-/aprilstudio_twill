@@ -50,103 +50,13 @@
 
 <!-- big work list -->
 <div class="news">
-
-			<ul class="grid effect-4" id="grid">
-                    @foreach ($work_chunks as $chunk)
-                        @include('site.work_chunk', ['chunk' => $chunk, 'loop' => $loop])
-                    @endforeach
-            </ul>
+    <ul class="grid effect-4" id="grid">
+        @foreach ($works as $work)
+            @include('site.other_work_at_home', ['work' => $work, 'isEven' => $loop->even])
+        @endforeach
+    </ul>
 </div>
 <!-- \ big work list -->
-
-<!--
-
-            @foreach ($work_chunks as $chunk)
-            <section class="container-fluid work-chunk">
-                <div class="row">
-                    <a class="main-image-block col-sm-6 d-flex flex-column cell-link mb-sm-0 mb-4 {{$loop->even ? 'order-last' : ''}}" href="{{ $chunk[0]->getRelativeUrl() }}">
-                        <div class="img-cell flex-fill img-bg d-flex align-items-center justify-content-center first-img">
-                            <img src="{{$chunk[0]->image('cover')}}" class="img-fluid">
-                        </div>
-                        <h4 class="mt-2 d-inline d-sm-none">
-                            {{$chunk[0]->title}}
-                        </h4>
-                    </a>
-                    <div class="col-sm-6">
-                        <div class="row row-1-and-2">
-                            @if (isset($chunk[1]))
-                            <a class="col-sm-6 cell-link mb-sm-2 mb-4" href="{{ $chunk[1]->getRelativeUrl() }}">
-                                <div class="img-cell img-bg d-flex align-items-center justify-content-center secondary-img">
-                                    <img src="{{$chunk[1]->image('cover')}}" class="img-fluid">
-                                </div>
-                                <h4 class="mt-2 flex-fill">
-                                    {{$chunk[1]->title}}
-                                </h4>
-                            </a>
-                            @endif
-                            @if (isset($chunk[2]))
-                            <a class="col-sm-6 cell-link mb-sm-2 mb-4" href="{{ $chunk[2]->getRelativeUrl() }}">
-                                <div class="img-cell img-bg d-flex align-items-center justify-content-center secondary-img">
-                                    <img src="{{$chunk[2]->image('cover')}}" class="img-fluid">
-                                </div>
-                                <h4 class="mt-2 flex-fill">
-                                    {{$chunk[2]->title}}
-                                </h4>
-                            </a>
-                            @endif
-                        </div>
-                        <div class="row row-3-and-4">
-                            @if (isset($chunk[3]))
-                            <a class="col-sm-6 cell-link mb-sm-0 mb-4" href="{{ $chunk[3]->getRelativeUrl() }}">
-                                <div class="img-cell img-bg d-flex align-items-center justify-content-center secondary-img">
-                                    <img src="{{$chunk[3]->image('cover')}}" class="img-fluid">
-                                </div>
-                                <h4 class="mt-2 flex-fill d-block d-sm-none">
-                                    {{$chunk[3]->title}}
-                                </h4>
-                            </a>
-                            @endif
-                            @if (isset($chunk[4]))
-                            <a class="col-sm-6 cell-link mb-sm-0 mb-4" href="{{ $chunk[4]->getRelativeUrl() }}">
-                                <div class="img-cell img-bg d-flex align-items-center justify-content-center secondary-img">
-                                    <img src="{{$chunk[4]->image('cover')}}" class="img-fluid">
-                                </div>
-                                <h4 class="mt-2 flex-fill d-block d-sm-none">
-                                    {{$chunk[4]->title}}
-                                </h4>
-                            </a>
-                            @endif
-                        </div>
-                    </div>
-                </div>
-                <div class="row d-none d-sm-flex desktop-low-headers-row">
-                    <a class="col-sm-6 cell-link {{$loop->even ? 'order-last' : ''}}" href="{{ $chunk[0]->getRelativeUrl() }}">
-                        <h4 class="mt-2">
-                            {{$chunk[0]->title}}
-                        </h4>
-                    </a>
-                    @if (isset($chunk[3]))
-                    <a class="col-sm-3 cell-link" href="{{ $chunk[3]->getRelativeUrl() }}">
-                        <h4 class="mt-2 flex-fill">
-                            {{$chunk[3]->title}}
-                        </h4>
-                    </a>
-                    @else
-                    <div class="col-sm-3"></div>
-                    @endif
-                    @if (isset($chunk[4]))
-                    <a class="col-sm-3 cell-link" href="{{ $chunk[4]->getRelativeUrl() }}">
-                        <h4 class="mt-2 flex-fill">
-                            {{$chunk[4]->title}}
-                        </h4>
-                    </a>
-                    @else
-                    <div class="col-sm-3"></div>
-                    @endif
-                </div>
-            </section>
-            @endforeach
-            -->
 
 <!-- ---------------- btn_orderblock ---------------- -->
 <button type="button" class="btn btn-primary" id="btn_orderblock">Заказать дизайн</button>
@@ -165,7 +75,7 @@
     <path d="M15.7614 6.95615C14.9555 4.32385 12.6212 2.31495 9.70394 2.04638C5.86461 1.69292 2.46113 4.50246 2.1078 8.34032C1.89702 10.6298 2.8338 12.7593 4.42712 14.185C4.16612 13.347 4.06358 12.4406 4.1485 11.5182C4.50183 7.68033 7.90531 4.87079 11.7446 5.22425C13.3038 5.36779 14.6819 6.0096 15.7614 6.95615Z" stroke="#51565C" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
 
-         
+
     </span>
     <span class="sun_pic">
     <svg width="14" height="14" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -203,7 +113,7 @@
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-        <script src="/js/union.js"></script> 
+        <script src="/js/union.js"></script>
 
         <script>
             /*  ---------------- turn on the night styles ------------------ */
@@ -218,13 +128,13 @@
                 }
             }
             function modecheck() {
-                if (user_mode.checked) { 
+                if (user_mode.checked) {
                 document.documentElement.classList.add('night');
                 updateURL('?mode=nightmode');
 
                 } else {
-                document.documentElement.classList.remove('night'); 
-                updateURL('?mode=daymode');     
+                document.documentElement.classList.remove('night');
+                updateURL('?mode=daymode');
                 }
             }
             modecheck();
@@ -245,7 +155,7 @@
             } );
         </script>
         <!-- \ masonry animation scripts for welcome page. Part 2 -->
-    
-    
+
+
     </body>
 </html>

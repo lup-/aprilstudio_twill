@@ -59,35 +59,13 @@
 </section>
 
 <section class="projects">
+    @foreach ($favouriteWorks as $work)
+        @include('site.favourite_work_at_home', ['work' => $work, 'loop' => $loop])
+    @endforeach
 
-    <span class="line_projects line_cherehapa">
-    	<span class="projects_logo"><img src="http://aprilstudio.ru/imgs/logos/cherehapa.png" alt="Cherehapa"></span>
-        <span class="projects_caption no_morebtn"><span>
-        	<h2>Дизайн онлайн сервиса покупки страховки для&nbsp;путешествия &laquo;Черехапа&raquo;</h2>
-        </span></span>
-        <span class="clear"></span>
-    </span>
-    
-    <span class="line_projects line_dymov">
-    	<span class="projects_logo"><img src="http://aprilstudio.ru/imgs/logos/dymov.png" alt="Дымов керамика"></span>
-        <span class="projects_caption no_morebtn"><span>
-        	<h2>Дизайн сайта керамической мастерской &laquo;Дымов керамика&raquo;</h2>
-        </span></span>
-        <span class="clear"></span>
-    </span>
-    
-    <span class="line_projects line_bosco">
-    	<span class="projects_logo"><img src="http://aprilstudio.ru/imgs/logos/bosco.png" alt="Bosco"></span>
-        <span class="projects_caption no_morebtn"><span>
-        	<h2>Дизайн сайта Bosco для&nbsp;Олимпиады Сочи-2014</h2>
-        </span></span>
-        <span class="clear"></span>
-    </span>
-    
-
-     @foreach ($otherWorks as $chunk)
-           @include('site.work_chunk', ['chunk' => $chunk, 'loop' => $loop])
-     @endforeach
+    @foreach ($otherWorks as $work)
+        @include('site.other_work_at_home', ['work' => $work, 'loop' => $loop])
+    @endforeach
 </section>
 
 </main>
@@ -106,10 +84,10 @@
             </nav>
         </div>
     <!-- \ div rotate footer right menu -->
-       
+
     <!-- cookies -->
-    <div class="cookies" id="cookies">
-    <p><span>Мы используем файлы cookies, чтобы улучшить работу сайта.</span>  <span class="btnsblock"><button class="btn bnt_white btn_sm" onclick="closecookies()">Cогласен</button> <button class="btn bnt_white btn_sm"><a href="notagree.html">Не согласен</a></button></span></p>
+    <div class="cookies" id="cookies" style="display: none">
+        <p><span>Мы используем файлы cookies, чтобы улучшить работу сайта.</span>  <span class="btnsblock"><button class="btn bnt_white btn_sm" onclick="acceptCookies()">Cогласен</button> <button class="btn bnt_white btn_sm"><a href="notagree.html">Не согласен</a></button></span></p>
     </div>
     <!-- \ cookies -->
 
@@ -120,13 +98,36 @@
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-        <script src="/js/union.js"></script> 
+        <script src="/js/union.js"></script>
 
 <script>
-/*  ---------------- close cookies ------------------ */
-function closecookies() {
-    document.getElementById('cookies').style.display = "none";
-}
+    /*  ---------------- close cookies ------------------ */
+    function checkAndShowCookiesIfNotAccepted() {
+        let cookiesNotAccepted = localStorage.getItem('cookies') !== 'true';
+
+        if (cookiesNotAccepted) {
+            showCookies();
+        }
+    }
+
+    function saveCookiesStatus() {
+        localStorage.setItem('cookies', 'true');
+    }
+
+    function hideCookies() {
+        document.getElementById('cookies').style.display = "none";
+    }
+
+    function showCookies() {
+        document.getElementById('cookies').removeAttribute('style');
+    }
+
+    function acceptCookies() {
+        hideCookies();
+        saveCookiesStatus();
+    }
+
+    checkAndShowCookiesIfNotAccepted();
 </script>
 
 </body>
