@@ -1,35 +1,51 @@
 @font-face {
-        font-family: "Gerbera-Light"; 
-        src: url(/fonts/Gerbera-Light.eot?) format("eot"), 
-        url(/fonts/Gerbera-Light.woff) format("woff"), 
-        url(/fonts/Gerbera-Light.ttf) format("truetype");
-       }
+    font-family: "Mont"; 
+    src: url(/fonts/Mont-Regular.eot?) format("eot"), 
+    url(/fonts/Mont-Regular.woff) format("woff"), 
+    url(/fonts/Mont-Regular.ttf) format("truetype");
+    font-weight: 300;
+   }
+@font-face {
+    font-family: "Mont"; 
+    src: url(/fonts/Mont-SemiBold.eot?) format("eot"), 
+    url(/fonts/Mont-SemiBold.woff) format("woff"), 
+    url(/fonts/Mont-SemiBold.ttf) format("truetype");
+    font-weight: 500;
+   }
 
 * {
-        font-family: "Gerbera-Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-family: "Mont", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 300;
     }  
 html, body {
         position: relative;
         width: 100%;
         /*height: 100%;*/
     }
+    ::selection {
+        background: #3173FF; /* Safari */
+        }
+        ::-moz-selection {
+        background: #3173FF; /* Firefox */
+        }
 
         html {font-family: sans-serif; background-color: #fff; }
-        body {color: #fff; line-height: 140%; font-size: 16px; font-family: "Gerbera-Light", sans-serif; padding: 0; margin: 0; background-color: #fff;}
+        body {cursor:url(/images/cursor.cur) 25 25,auto; color: #fff; line-height: 140%; font-size: 16px; font-family: "Mont", sans-serif; padding: 0; margin: 0; background-color: #fff;}
         a {color: #fff; text-decoration: none;}
         a:hover {color:#ddd; text-decoration: none;}
+        a:hover{cursor: pointer; cursor:url(/images/cursor-hover.cur) 25 25,pointer;}
         p {padding: 0; margin: 5px 0;}
         h1 {font-size: 78px; font-weight: normal; line-height: 120%; padding: 0; margin: 0;}
-        h2 {font: 28px 'Open Sans', SansVerdana, Geneva, sans-serif; font-weight: 300; line-height: 120%; padding: 0; margin: -12px 0 0;}
+        h2 {font-size: 28px; font-weight: 300; line-height: 120%; padding: 0; margin: -12px 0 0;}
         .clear {clear: both; height: 0; font-size: 1px;}
         .nowrap {white-space: nowrap;}
         .textalign_center {margin: 0 auto; text-align: center;}
-	.ForMobile {display:none;}
+        .ForMobile {display:none;}
+        .ForTablet {display:none;}
         .ForDesktop {display:block;}
 
-.union_logo {position: absolute; top:0; left:0; margin: 65px 0 0 65px; z-index: 200;}
 
-/*  ---------------- night styles ------------------ */
+/*  ---------------- night styles ------------------ *
 html {transition: 1s background, color;}
 .night .mode_moon svg {stroke: #fff;}
 .night header nav a.active {background-color: #F13A02; color:#E8E7E1; border-radius: 8px;}
@@ -99,25 +115,9 @@ html {transition: 1s background, color;}
 body.welcomePage {background-color: #fff; background-image: url(/images/bg_red.png); background-repeat: repeat-x; background-position: 0 0;} */
 body.welcomePage {background-color: #3173FF;}
 
+.union_logo {position: absolute; top:0; left:0; margin: 65px 0 0 65px; z-index: 200;}
 .leadWelcomeBlock {position:relative;}
-.photo {position:relative; min-width:1250px;}
-.photo__container--top {position:relative;}
-.photo__container {width:968px;}
-.photo__container {margin-left:auto; margin-right:auto; padding-left:0; padding-right:0;}
-.photo__container {padding-left:20px; padding-right:20px;}
-.photo__presentation {background-color:#0757FE; background-image:url(http://aprilstudio.ru/imgs/bg_mainpage.png); background-position:center top; background-repeat:no-repeat; background-size:cover; padding-top:70%;}
-.photo.smartphones .photo__presentation {background:#EE3048 url(http://aprilstudio.ru/imgs/smartphones.png) left bottom no-repeat; background-size:cover; }
-.photo__content {bottom:75px; left:0; position:absolute; right:0;}
-.photo__heading {margin-bottom:1em; color:#fff; padding-left: 42px;}
-.photo__heading h1 {font:52px 'Open Sans', SansVerdana, Geneva, sans-serif; font-weight:300; line-height:120%; padding:0; margin:0 0 40px 0;}
-.photo__heading p {padding:0; margin:0; font-size:20px;}
-.photo__heading p span {white-space:nowrap;}
-.photo__heading .phone a {text-decoration:none !important; color:#fff !important;}
-.photo__heading p.citycontacts {font-size: 13px;}
-.photo .ForMobile .btn_menu.mainpagemenu {font-size:14px; padding: 10px;}
-.photo__heading.ForMobile b {font-size:14px;}
-.photo__heading.ForMobile a span {opacity:0.9;}
-.photo__heading.ForMobile a:hover span {opacity:1;}
+
 
 
 
@@ -125,7 +125,7 @@ body.welcomePage {background-color: #3173FF;}
         header nav {text-transform:uppercase; text-align: right; letter-spacing: 2px; white-space: nowrap; margin-top: 63px; margin-right: 80px;}
         header nav a {padding:11px 10px 7px 11px; margin: 0 2px; line-height: 300%;}
         header nav a:hover {text-decoration: none; color:#ddd; }
-        header nav a.active {background-color: #fff; border-radius: 8px; color:#000; cursor: text;}
+        header nav a.active {border-radius: 8px; color:#000; cursor: text;}
         header nav a.active:hover {text-decoration: none; color:#222;}
         header .menublock.rotate nav {text-align: left;}
         .instantviewText {display: none;}
@@ -152,7 +152,7 @@ body.welcomePage {background-color: #3173FF;}
                 bottom:0;
         }
 
-        .logo {position: fixed; top: 0; z-index: 1001; margin-top: 62px; margin-left: 58px;}
+        .logo {position: fixed; top: 0; z-index: 1001; margin-top: 62px; margin-left: 103px;}
         .logo.rotate {
                 -webkit-transform: rotate(-90deg);
                 -moz-transform: rotate(-90deg);
@@ -166,7 +166,7 @@ body.welcomePage {background-color: #3173FF;}
                 -ms-transform-origin: left top;
                 transform-origin: left top;
                 margin-top: 219px;
-                margin-left: 50px;}
+                margin-left: 30px;}
         .logo.rotate img {margin:0;}
        /* .logo img {float: left; margin:79px 0px 0px 80px; width: 146px;} */
         .logo .logo_forDay {display: block;}
@@ -189,7 +189,7 @@ body.welcomePage {background-color: #3173FF;}
                 -o-transform: rotate(-90deg);
                 transform: rotate(-90deg);
                 right: 0;
-                bottom:505px;
+                bottom:335px;
                 -webkit-transform-origin: right bottom;
                 -moz-transform-origin: right bottom;
                 -o-transform-origin: right bottom;
@@ -202,7 +202,7 @@ body.welcomePage {background-color: #3173FF;}
         .footer_deg90 nav.lang {margin-right: 42px; margin-left: 7px;}
         .footer_deg90 nav.lang a:hover {color:#ddd; text-decoration: none;}
         .footer_deg90 nav.lang a {margin-right: 6px;}
-        .footer_deg90 nav.lang a.active, .footer_deg90 nav.lang a.active:hover {cursor:text; color:#2D2D2D}
+        .footer_deg90 nav.lang a.active, .footer_deg90 nav.lang a.active:hover {cursor:text; color:#fff; opacity: 0.7;}
         .footer_deg90 .moon_pic {display: none;}
         .footer_deg90 .sun_pic {display: block;}
         .night .footer_deg90 .moon_pic {display: block;}
@@ -223,7 +223,7 @@ body.welcomePage {background-color: #3173FF;}
         .bubbleblock svg.bubble_whiteline {stroke: #fff; position: absolute; right: 10px; bottom: 22px; }
 
         .innerH1block h1.bigH1, .bigH1 {font-size: 72px;}
-
+/*
         .owl-carousel {margin-bottom: 33px;}
         .owl-carousel .owl-nav {font-size: 60px; color: #fff;}
         .owl-carousel .owl-nav button.owl-prev,
@@ -233,7 +233,7 @@ body.welcomePage {background-color: #3173FF;}
         .owl-carousel .owl-dots {position: absolute; right: 28px; bottom: 22px;}
         .owl-carousel button.owl-dot {background-color: transparent; height: 12px; width: 12px; border-radius: 12px; border: solid 2px #fff; margin: 0 0 0 8px; outline: none;}
         .owl-carousel button.owl-dot.active  {background-color: #fff;}
-
+*/
 
 
 /*  ---------------- styles for switcher day-night mode ------------------ */
@@ -274,7 +274,7 @@ label[for="mode"] span {position: absolute;display: block;width: 10px;height: 10
 
 #fotmenu_smallscreen {display: none; font-size: 1px; line-height: 1px; margin-bottom: 3px;}
 #fotmenu_smallscreen a {margin-right: 6px;}
-
+/*
 .cookies {position: fixed; display:flex; align-items:center; justify-content:center; z-index: 150; bottom: 60px; font-size: 20px; left: 0; margin: 0 50px; margin: 0 auto; width: 100%;} 
 .cookies p {background-color: #fff; padding: 10px 10px 10px 20px; border-radius: 60px; box-shadow: 0 0 5px #777; font-size: 20px; box-shadow: 0 0 5px #777;}
 .cookies_orange p {background-color: #FF3F05; color: #fff; padding-right: 20px;}
@@ -293,11 +293,11 @@ ul.AreasList li {padding: 0 10px 0 0;display: inline; white-space: nowrap; line-
 ul.AreasList a {text-decoration: none; border-bottom: solid 1px;}
 ul.AreasList a:hover {text-decoration: none; border: none;}
 ul.AreasList a.active {text-decoration: none; border: none; color:#FF3F05;}
-.innerH1block ul.AreasList {padding-top: 9px; padding-bottom: 25px; margin-right: 240px;}
+.innerH1block ul.AreasList {padding-top: 9px; padding-bottom: 25px; margin-right: 240px;} */
 
 .work-chunk {padding: 0px 0 50px 0;}
 
-/* ------------- main welcome page works as news ------------- */
+/* ------------- main welcome page works as news ------------- *
 .news {width: 100%; z-index: 10;}
 .news a:hover {color: #FF3F05;  z-index: 10;}
 .news_item img {width:100%;  z-index: 10;}
@@ -310,39 +310,91 @@ ul.AreasList a.active {text-decoration: none; border: none; color:#FF3F05;}
 .news_item_long {width:636px; border-bottom:#D8D8D8 1px solid; padding-bottom:13px; margin-bottom:22px}
 .news_item_long h3 {font-size:30px} 
 .grid li a {padding: 0 16px 0px 16px;}
-/* fluid 3 columns */
+* fluid 3 columns *
 .grid-sizer, .grid-item {width: 33%;}
-/* style for isPrimary photo */
+* style for isPrimary photo *
 .grid-itemPrimaryWidth {width: 33%;}
-/* ------------- \ main welcome page works as news ------------- */
+* ------------- \ main welcome page works as news ------------- */
 
 
-/* ------------------ main welcome page projects -------------------------- */
+/* ------------------ Welcome page. Lines -------------------------- */
+.welcomePage .logo {position: absolute; top:0; left: 0;}
+.logo img {width: 140px;}
+.photo {position:relative; min-width:1250px;}
+.photo__container--top {position:relative;}
+.photo__container {width:968px;}
+.photo__container {padding-left:0; padding-right:0;}
+.photo__container {padding-left:20px; padding-right:20px;}
+.photo__presentation {background-color:#2B2B2B; background-image:url(/images/welcome_bg.jpg); background-position:center top; background-repeat:no-repeat; background-size:cover; padding-top:70%;}
+.photo__presentation {padding-top:70%;}
+.photo.smartphones .photo__presentation {background:#EE3048 url(http://aprilstudio.ru/imgs/smartphones.png) left bottom no-repeat; background-size:cover; }
+.photo__content {bottom:75px; left:0; position:absolute; right:0;}
+.photo__heading {margin-bottom:1em; color:#fff; padding-left: 26px;}
+.photo__heading h1 {font-size:52px; font-weight:500; line-height:120%; padding:0; margin:0 0 20px 0;}
+.photo__heading p {padding:0; margin:0; font-size:34px;}
+.photo__heading .phone a {text-decoration:none !important; color:#fff !important;}
+.photo__heading p.citycontacts {font-size: 16px; line-height: 110%;}
+.photo .ForMobile .btn_menu.mainpagemenu {font-size:14px; padding: 10px;}
+.photo__heading.ForMobile b {font-size:14px;}
+.photo__heading.ForMobile a span {opacity:0.9;}
+.photo__heading.ForMobile a:hover span {opacity:1;}
 
+.photo .ForMobile .btn_menu.mainpagemenu {font-size:14px; padding: 10px;}
 .projects {color:#fff; min-width:1250px;}
 .projects a {color:#fff; text-decoration:none;}
 .projects a:hover {color:#fff; text-decoration:none; opacity:1}
-.projects h2 {opacity:0.9;}
+.projects h2 {opacity:0.9; font-size: 34px;}
 .projects h2.medium {font-size:32px; margin-top:0px;}
 .projects .tags {font-size:16px;}
 .projects .tags a {margin-right:20px; opacity:0.9}
 .projects .tags a:hover {text-decoration:none; opacity:1;}
 .projects_logo {width:470px; height:100%; position:relative; float:left;}
-.projects_logo img {left:50%; position:absolute; top:50%; transform:translateX(-50%) translateY(-50%); -ms-transform:translateX(-50%) translateY(-50%); -webkit-transform:translateX(-50%) translateY(-50%); -o-transform:translateX(-50%) translateY(-50%); -moz-transform:translateX(-50%) translateY(-50%);}
+.projects_logo img {left:50%; position:absolute; top:50%; max-height: 70%; max-width: 55%; transform:translateX(-50%) translateY(-50%); -ms-transform:translateX(-50%) translateY(-50%); -webkit-transform:translateX(-50%) translateY(-50%); -o-transform:translateX(-50%) translateY(-50%); -moz-transform:translateX(-50%) translateY(-50%);}
 .projects_more {width:240px; height:100%; float:right; position:relative;}
 .projects_more a, .projects_more span {margin-right:58px; position:absolute; top:50%; transform:translateY(-50%);}
 .projects_more em {font-style:normal;}
-.projects_caption {margin:0 325px 0 470px; position:relative; height:100%}
+.projects_caption {margin:0 235px 0 470px; position:relative; height:100%}
 .projects_caption.no_morebtn {margin-right:260px;}
 .projects_caption div, .projects_caption span {position:absolute; top:50%; transform:translateY(-50%); width:100%}
+
+.line_projects {background-color: #F6D900; background-position: 1000px 1000px; background-repeat: no-repeat; background-size: cover; height:192px; width:100%; display:block;}
+.line_projects:hover {background-position: center top;}
+.line_projects span {display:block;}
 .line_projects.line_contacts a {color:#253227 !important; text-decoration:none !important;}
-.line_projects.line_contacts h2 {padding:0; margin:0;}
-/* ------------------ \ main welcome page projects -------------------------- */
+
+.hovershadow {width:100%; height:100%;}
+:hover.hovershadow {background-image: linear-gradient(to top,  rgba(0,0,0,0.3),  rgba(0,0,0,0.1), rgba(0,0,0,0.1), rgba(0,0,0,0.1), rgba(0,0,0,0.1), rgba(0,0,0,0.1), rgba(0,0,0,0.3) );}
+/* ------------------ \ Welcome page. Lines -------------------------- */
 
 main.listblade {margin: 0 45px 0 95px;}
+
+/* ------------- black text style for the page of 1 work (Samokat and other) ------------- */
+.blacktext h2 {color:#000;}
+.blacktext header, .blacktext main, .blacktext main a, .blacktext nav a, .blacktext h1, .blacktext h3 {color:#000;}
+.blacktext main .btn {color: #000; border-color: #000;}
+.nextWorkBlock.blacktext .btn_white {color: #000; border-color: #000;}
+.nextWorkBlock.blacktext .btn_white a, .nextWorkBlock.blacktext .btn_white:hover a, .nextWorkBlock.blacktext .btn_white:hover a:hover {color: #000;}
+.blacktext .footer_deg90 nav.lang a.active, .blacktext .footer_deg90 nav.lang a.active:hover {color:#000; opacity: 0.8;}
+.blacktext .footer_deg90 nav.lang a:hover {color:#000; opacity: 0.85;}
+.blacktext header nav a:hover {color:#000; opacity: 0.85;}
+.blacktext .logo img, .blacktext .icon_close {-webkit-filter: invert(100%); filter: invert(100%);}
+.blacktext .nav-mobile span {border-top-color: #000;}
+.blacktext .nav-mobile span:after, .blacktext .nav-mobile span:before {background-color: #000;}
+.blacktext .modal-backdrop {background: #333;}
+
+.blacktext.nextWorkBlock {color: #000;}
+.blacktext.nextWorkBlock .btn, .blacktext.nextWorkBlock .btn:hover {border-color: #000; color: #000;}
+/* ------------- \ black text style for the page of 1 work (Samokat and other) ------------- */
+
 /* ------------- innet 1 project page ------------- */
+.top_bg {width:100%; position: fixed; top:0; left:0; z-index:20;}
+.blockquote {margin-bottom: 3rem;}
+.blockquote:before {display:none;}
+
+.OneWorkPage main .btn_white:hover a {color:#041d72;}
+
 .innerH1block {position: relative; z-index: 40; padding: 194px 0 0 0; margin: 0 auto; text-align: center;}
-.innerH1block img {width: 400px;}
+.innerH1block img {max-width: 400px; max-height: 200px; margin-bottom:28px; }
 .innerH1block h1 {font-size: 28px; margin: 10px 0 0 0;}
 .innerH1block h3 {font-size: 20px;}
 
@@ -354,7 +406,8 @@ main.innerProjectPage.py-4.flex-fill {padding-top: 0 !important;}
 .videoWrapper.videoSize4x3 {padding-bottom: 73.25%;}
 .videoWrapper.videoSize16x9 {padding-bottom: 56.25%;}
 
-.blockquoteText {font-size: 22px; text-align: center; line-height: 120%;}
+.blockquoteText {text-align: center; line-height: 120%; margin-bottom: 65px; font-size: 30px; padding-left: 100px; padding-right: 100px; margin: 0 auto; text-align: center;}
+
 footer.innerNextWork {padding-left: 130px; padding-right: 72px; margin: 0;}
 footer.innerNextWork .btn-link {opacity: 0.5;}
 
@@ -374,7 +427,7 @@ footer.innerNextWork .btn-link {opacity: 0.5;}
 
 .nextWorkBlock {color:#fff; position:relative; z-index:100; bottom:0; left:0; width:100%; height:500px; background-size:cover; background-position:center top; background-repeat:no-repeat;}
 .nextWorkBlock .showmore {padding-top: 68px; margin-bottom: 22px;}
-.nextWorkBlock .brand_logo img {width: 400px;}
+.nextWorkBlock .brand_logo img {max-width: 400px; max-height: 150px;}
 .nextWorkBlock .textalign_center.showmore_btn {margin-top: 75px;}
 
 .nextWorkBlock.popmech {background-color:#273364; background-image:url(http://aprilstudio.ru/imgs/projects/popmech/footer_bg.png);}
@@ -401,12 +454,6 @@ footer.innerNextWork .btn-link {opacity: 0.5;}
 /* ------------- \ innet 1 project page ------------- */
 
 
-/* ------------- projects colors blands ------------- */
-.top_bg {width:100%; position: fixed; top:0; left:0; z-index:20;}
-body.pr_mediamarkt {background-color: #EC0094; color:#fff}
-.pr_mediamarkt .btn_white:hover {color:#EC0094}
-/* ------------- \ projects colors blands ------------- */
-
 
 @media (min-width: 1550px) {
         /* fluid 4 columns */
@@ -419,33 +466,36 @@ body.pr_mediamarkt {background-color: #EC0094; color:#fff}
 }
 @media (max-width: 1020px) {
         main.innerProjectPage .innerCaseStudyText p {width:80%;}
-
+        #btn_orderblock {position: relative; top: 0; right: 0; margin: 0 auto; display: inline-block;}
+        .btn_order_container {text-align: center;}
+        .blockquoteText {font-size: 28px;}
+        .innerH1block img {max-width: 320px; max-height: 120px;}
+/*
         .owl-carousel .owl-dots {right: 10px; bottom: 10px;}
         .owl-carousel .owl-nav button.owl-prev {left: 10px;}
         .owl-carousel .owl-nav button.owl-next {right: 10px;}
         .owl-carousel button.owl-dot {height: 9px;
                 width: 9px;
                 border-radius: 9px;}
-        .footer_deg90 {margin-right:0; bottom: 280px;}
+        .footer_deg90 {margin-right:0; bottom: 340px;}
         .footer_deg90 nav {font-size: 10px;}
         .footer_deg90 nav.lang {margin-right: 14px;}
         .menublock.rotate {width: 100%;}
         .menublock.rotate nav {padding: 10px 0 0 29px;}
         .WorkListPage .menublock.rotate nav {padding-left: 40px;}
-        .logo.rotate {margin-left:40px; margin-top: 40px;}
+        .logo.rotate {margin-left:40px; margin-top: 40px;} */
         .next-work h6 {margin-top: 30px;}
         .next-work_btn .btn {margin-top: 23px;}
 
-        .innerH1block {padding-top: 0;}
+        .innerH1block {padding-top:40px; margin-top: 40px;}
         .lead_welcome {padding: 0 40px 0 40px;}
         main.listblade {margin: 0 10px 0 5px;}
-        #btn_orderblock {top:39px; right: 40px;}
         .innerH1block, main.innerProjectPage {margin-left: 40px; margin-right: 40px;}
-        /* fluid 2 columns */
+        /* fluid 2 columns 
         .grid li {width: 50%;}
+*/
 
-
-        .logo {position: relative;}
+        .OneWorkPage .logo {position: relative;} 
         .menublock {position: relative;}
         header nav {margin: 0;}
         .menublock.rotate {
@@ -482,8 +532,8 @@ body.pr_mediamarkt {background-color: #EC0094; color:#fff}
                         -ms-transform-origin: left top;
                         transform-origin: left top;
         }
-        .logo {margin-left: 40px;}
-        .logo img {margin-left:0;}
+        .logo, .logo.rotate {margin-left: 40px; margin-top: 40px;}
+        .logo img {margin-left:0; width: 116px;}
         footer.innerNextWork {padding-left: 40px; padding-right: 40px; margin: 0;}
         .cookies p {border-radius: 30px; font-size: 14px; margin: 0 40px; text-align: center;}
         .cookies p span {white-space: nowrap;}
@@ -491,11 +541,16 @@ body.pr_mediamarkt {background-color: #EC0094; color:#fff}
         .cookies .btn_sm {font-size: 12px;}
         .lead h1 {font-size: 62px;}
         .lead {padding-left: 40px; padding-right: 40px;}
+        .nextWorkBlock .brand_logo img {max-width: 50%;}
+        .ForTablet {display:block;}
+	    .ForMobile {display:none;}
+        .ForDesktop {display:none;}
 }
 /* mobile */
 @media screen and (max-width: 768px) {
-	.ForMobile {display:block;}
+	    .ForMobile {display:block;}
         .ForDesktop {display:none;}
+        .ForTablet {display:none;}
 }
 
 @media (max-width:640px) {
@@ -506,6 +561,8 @@ body.pr_mediamarkt {background-color: #EC0094; color:#fff}
         .grid li {width: 100%;}
         .cookies p {padding: 10px 15px;}
         .lead h1 {font-size: 47px;}
+        .blockquoteText {font-size: 25px; padding-left: 40px; padding-right: 40px;}
+        .innerH1block img {max-width: 220px; max-height: 100px;}
         
         ul.AreasList li {display: block;}
         .next-work_info {width: 100%; float:none;}
@@ -521,11 +578,9 @@ body.pr_mediamarkt {background-color: #EC0094; color:#fff}
         .footer_deg90 {margin-right:-5px; bottom: 280px;}
         .footer_deg90 nav { font-size: 10px;}
         .footer_deg90 nav.lang {margin-right: 14px;}
-        #btn_orderblock {position: relative; top: 0; right: 0;}
         .menublock.rotate {width: 100%; width: auto;}
         .menublock.rotate nav {padding: 10px 0 0 9px;}
         .WorkListPage .menublock.rotate nav {padding-left: 20px;}
-        .logo.rotate {margin-left:20px}
         #fotmenu_bigscreen {display: none;}
         #fotmenu_smallscreen {display: block;}
         .bubble {width: auto;}
@@ -533,7 +588,7 @@ body.pr_mediamarkt {background-color: #EC0094; color:#fff}
         .bubble img {float: none;}
         .bubble p {margin-left: 5px;}
         p {font-size: 16px;}
-        main {margin-top: 5px; padding: 0;}
+        main {margin-top: 0; padding: 0;}
         main .leadtext {font-size: 20px; line-height: 140%;}
         main.innertext {line-height: 90%;}
         .bubble {font-size: 16px;}
@@ -541,12 +596,11 @@ body.pr_mediamarkt {background-color: #EC0094; color:#fff}
         header nav {font-size: 14px;margin-top: 0;}
         .bubble .ava {width: 42px; height: 42px;}
         header {padding-top: 0px;}
-        .logo {margin-left: 21px;}
-        .logo img {width: 115px; margin-top: 0;}
+        .logo {margin-left: 21px; margin-top: 40px;}
+        .logo img {width: 115px;}
         .cookies_violet {width: 100%; left: auto; margin-left: 0;}
         
         .menublock {margin-top: 40px;}
-        .logo {margin-top: 40px;}
 
         .innerH1block, main.innerProjectPage {margin-left: 20px; margin-right: 20px;}
         footer.innerNextWork {padding-left: 20px; padding-right: 20px;}
@@ -570,8 +624,6 @@ body.pr_mediamarkt {background-color: #EC0094; color:#fff}
                 transform-origin: left top;
                 margin-bottom: 40px;
                 text-align: right;}
-     
-
 }
 @media (max-width: 768px) and (orientation: landscape) {
    
@@ -616,6 +668,7 @@ footer .row .col-md-6, footer .row .col-12 {padding-left:0;}
         display: flex;
         align-items: center;
         justify-content: center;
+        cursor: url(/images/cursor-hover.cur) 25 25,pointer;
     }
     .nav-mobile span {
         width: 28px;
@@ -661,17 +714,24 @@ footer .row .col-md-6, footer .row .col-12 {padding-left:0;}
     list-style-type: none;
 }
 .menu__item {
-    margin-bottom: 3px;
+    margin-bottom: 8px;
     font-weight: 500;
+    font-size: 80px;
+    line-height: 140%;
 }
+    @media (max-width: 1100px) {
+        .menu__item {
+            font-size: 50px;
+        }
+    }
     @media (max-width: 991px) {
         .menu__item {
-            font-size: 20px;
+            font-size: 49px;
         }
     }
     @media (max-width: 575px) {
         .menu__item {
-            font-size: 18px;
+            font-size: 49px;
             line-height: 1.3;
             font-weight: 400;
             margin-bottom: 8px;
@@ -679,247 +739,85 @@ footer .row .col-md-6, footer .row .col-12 {padding-left:0;}
     }
 /* ------ \ Menu ------- */
 
-/* ------ Modal ------- */
-.icon_close {
-        width: 28px; height: 28px;
-        background-image: url("https://welcome.frankrg.com/site/templates/assets/images/assets/close.svg");
-    }
+/* ------ Modal union ------- */
 
-.modal-backdrop.show {
-        opacity: 0.9;
+.modal-content, .modal-header {border: none; border-radius: 0}
+.modal-content {width: 100%; height: 100%; text-transform: uppercase;}
+.icon_close {width: 30px; height: 30px; background-image: url("/images/ico_close.svg"); display: block; background-repeat: no-repeat; cursor:url(/images/cursor-hover.cur) 25 25,pointer;}
+.modal-header__close:focus, .modal-header__close:active {outline:none;}
+.modal-content .menu__item {margin-bottom: 12px;}
+.modal-content .menu.smalltext {margin-top: 55px;}
+.modal-content .menu.smalltext .menu__item {font-size:14px}
+.modal-content .menu.smalltext .menu__item {margin-bottom: 8px;}
+.modal-content .menu__item a:hover {opacity: 0.7;}
+.modal-content .modal-header_menu {margin-bottom: 36px;}
+
+/* ------ Modal ------- */
+.modal-backdrop.show {opacity: 0.9;}
+.modal-backdrop {background: #3173FF;}
+.modal-dialog_menu {width: 100%; margin: 0 auto; max-width: 600px; float: right;}
+.modal-content_menu {background-color: #fff; border: none; border-radius: 0; -webkit-box-shadow: none; box-shadow: none; padding: 28px 30px; min-height: 100vh;}
+.modal-body_menu {padding: 0;}
+.modal-header {position: relative;}
+.modal-header_menu {padding: 0; border-bottom: none; margin-bottom: 25px; display: flex; justify-content: space-between;}
+.modal-header__close {position: absolute; right: -2px; top: -5px; padding: 0; z-index: 5; background: none; border: none;}
+
+.modal-dialog_general {width: 100%; padding-right: 75px; padding-left: 90px; margin: 96px auto;}
+.modal-content_general {background-color: #fff; border: none; padding: 28px 77px 40px; box-shadow: 0 0 20px rgba(128, 128, 128, 0.5); border-radius: 40px; max-width: 1260px; margin: 0 auto 40px;}
+.modal-header_general,
+.modal-body_general {padding: 0; border: none;}
+.modal-header_general {display: flex; justify-content: space-between; padding: 40px 0 33px 0; align-items: center;}
+.modal-header_general__close {top: -1px; right: -47px;}
+.modal-header_general .h2 {line-height: 1; margin-left: -6px; margin-top: 12px;}
+.person_modal {flex: 0 0 auto; align-items: flex-end;}
+.person_modal__img {margin-right: 0; flex: 0 0 244px; max-width: 244px;}
+.person_modal__text {font-size: 32px; line-height: 1.209; margin-right: -14px;}
+.column-text {column-count: 2; column-gap: 30px; line-height: 1.35;}
+.column-text p {margin-bottom: 32px;}
+.column-text p + .list-modal {margin-top: -15px;}
+.list-modal {margin-left: 3px; margin-bottom: 26px;}
+.list-modal__item {margin-bottom: 13px;}
+.list-modal__item:before {width: 5px; height: 5px; border-radius: 0; top: 13px; left: 2px;}
+.btn_back-modal {width: 100%; max-width: 273px;}
+    @media (max-width: 1360px) {
+        .modal-dialog_general {padding-right: 65px;padding-left: 80px;margin: 60px auto;}
+        .person_modal__img {flex: 0 0 220px;max-width: 220px;}
     }
-    .modal-backdrop {
-        background: #FF4C00;
+    @media (max-width: 1199px) {
+        .modal-dialog_general {padding-right: 0;padding-left: 0;margin: 0 auto;}
+        .modal-content_general {padding: 28px 60px 60px;border-radius: 0;margin-bottom: 0;}
+        .modal-header_general {padding: 20px 0 33px 0;}
+        .modal-header_general .h2 {font-size: 70px;}
+        .person_modal__img {flex: 0 0 200px;max-width: 200px;}
     }
-    .modal-dialog_menu {
-        width: 100%;
-        margin: 0 auto;
-        max-width: 600px;
-        float: right;
+    @media (max-width: 991px) {
+        .modal-header_general__close {right: -2px;top: -5px;}
+        .modal-content_general {padding: 28px 30px 50px;}
+        .modal-header_general {padding: 20px 0;}
+        .modal-header_general .h2 {font-size: 54px;}
+        .person_modal__text {font-size: 22px;margin-right: -10px;}
+        .person_modal__img {flex: 0 0 140px;max-width: 140px;}
     }
-    .modal-content_menu {
-        background-color: #fff;
-        border: none;
-        border-radius: 0;
-        -webkit-box-shadow: none;
-        box-shadow: none;
-        padding: 28px 30px;
-        min-height: 100vh;
+    @media (max-width: 768px) {
+        .modal-content_general {padding: 28px 30px 30px;}
+        .modal-header_general {padding: 30px 0 20px 0;align-items: flex-end;}
+        .modal-header_general .h2 {font-size: 40px;margin: 0;}
+        .person_modal__text {font-size: 16px;margin-right: -10px;}
+        .person_modal__img {flex: 0 0 100px;max-width: 100px;}
+        .column-text {column-count: 1;column-gap: 0;}
+        .column-text p {margin-bottom: 20px;}
     }
-    .modal-body_menu {
-        padding: 0;
+    @media (max-width: 575px) {
+        .modal-header_general__close {right: -10px;top: -12px;}
+        .modal-header_general {flex-wrap: wrap;}
+        .modal-header_general .h2 {font-size: 34px;}
+        .person_modal {margin-top: 20px;align-items: center;}
+        .person_modal__img {order: -1;margin-right: 16px;}
+        .column-text p {margin-bottom: 16px;}
     }
-    .modal-header {
-        position: relative;
+    @media (max-width: 575px) {
+        .modal-header_general .h2 {font-size: 26px;}
     }
-    .modal-header_menu {
-        padding: 0;
-        border-bottom: none;
-        margin-bottom: 25px;
-        display: flex;
-        justify-content: space-between;
-    }
-    .modal-header__close {
-        position: absolute;
-        right: -2px; top: -5px;
-        padding: 0;
-        z-index: 5;
-        background: none;
-        border: none;
-    }
-    
-    /*Modal general*/
-    .modal-dialog_general {
-        width: 100%;
-        padding-right: 75px;
-        padding-left: 90px;
-        margin: 96px auto;
-    }
-    .modal-content_general {
-        background-color: #fff;
-        border: none;
-        padding: 28px 77px 40px;
-        box-shadow: 0 0 20px rgba(128, 128, 128, 0.5);
-        border-radius: 40px;
-        max-width: 1260px;
-        margin: 0 auto 40px;
-    }
-    .modal-header_general,
-    .modal-body_general {
-        padding: 0;
-        border: none;
-    }
-    .modal-header_general {
-        display: flex;
-        justify-content: space-between;
-        padding: 40px 0 33px 0;
-        align-items: center;
-    }
-    .modal-header_general__close {
-        top: -1px;
-        right: -47px;
-    }
-    .modal-header_general .h2 {
-        line-height: 1;
-        margin-left: -6px;
-        margin-top: 12px;
-    }
-    .person_modal {
-        flex: 0 0 auto;
-        align-items: flex-end;
-    }
-    .person_modal__img {
-        margin-right: 0;
-        flex: 0 0 244px;
-        max-width: 244px;
-    }
-    .person_modal__text {
-        font-size: 32px;
-        line-height: 1.209;
-        margin-right: -14px;
-    }
-    .column-text {
-        column-count: 2;
-        column-gap: 30px;
-        line-height: 1.35;
-    }
-    .column-text p {
-        margin-bottom: 32px;
-    }
-    .column-text p + .list-modal {
-        margin-top: -15px;
-    }
-    .list-modal {
-        margin-left: 3px;
-        margin-bottom: 26px;
-    }
-    .list-modal__item {
-        margin-bottom: 13px;
-    }
-    .list-modal__item:before {
-        width: 5px;
-        height: 5px;
-        border-radius: 0;
-        top: 13px;
-        left: 2px;
-    }
-    .btn_back-modal {
-        width: 100%;
-        max-width: 273px;
-    }
-        @media (max-width: 1360px) {
-            .modal-dialog_general {
-                padding-right: 65px;
-                padding-left: 80px;
-                margin: 60px auto;
-            }
-            .person_modal__img {
-                flex: 0 0 220px;
-                max-width: 220px;
-            }
-        }
-        @media (max-width: 1199px) {
-            .modal-dialog_general {
-                padding-right: 0;
-                padding-left: 0;
-                margin: 0 auto;
-            }
-            .modal-content_general {
-                padding: 28px 60px 60px;
-                border-radius: 0;
-                margin-bottom: 0;
-            }
-            .modal-header_general {
-                padding: 20px 0 33px 0;
-            }
-            .modal-header_general .h2 {
-                font-size: 70px;
-            }
-            .person_modal__img {
-                flex: 0 0 200px;
-                max-width: 200px;
-            }
-        }
-        @media (max-width: 991px) {
-            .modal-header_general__close {
-                right: -2px;
-                top: -5px;
-            }
-            .modal-content_general {
-                padding: 28px 30px 50px;
-            }
-            .modal-header_general {
-                padding: 20px 0;
-            }
-            .modal-header_general .h2 {
-                font-size: 54px;
-            }
-            .person_modal__text {
-                font-size: 22px;
-                margin-right: -10px;
-            }
-            .person_modal__img {
-                flex: 0 0 140px;
-                max-width: 140px;
-            }
-        }
-        @media (max-width: 768px) {
-            .modal-content_general {
-                padding: 28px 30px 30px;
-            }
-            .modal-header_general {
-                padding: 30px 0 20px 0;
-                align-items: flex-end;
-            }
-            .modal-header_general .h2 {
-                font-size: 40px;
-                margin: 0;
-            }
-            .person_modal__text {
-                font-size: 16px;
-                margin-right: -10px;
-            }
-            .person_modal__img {
-                flex: 0 0 100px;
-                max-width: 100px;
-            }
-            .column-text {
-                column-count: 1;
-                column-gap: 0;
-            }
-            .column-text p {
-                margin-bottom: 20px;
-            }
-        }
-        @media (max-width: 575px) {
-            .modal-header_general__close {
-                right: -10px;
-                top: -12px;
-            }
-            .modal-header_general {
-                flex-wrap: wrap;
-            }
-            .modal-header_general .h2 {
-                font-size: 34px;
-            }
-            .person_modal {
-                margin-top: 20px;
-                align-items: center;
-            }
-            .person_modal__img {
-                order: -1;
-                margin-right: 16px;
-            }
-            .column-text p {
-                margin-bottom: 16px;
-            }
-        }
-        @media (max-width: 575px) {
-            .modal-header_general .h2 {
-                font-size: 26px;
-            }
-        }
 
 .modal-dialog {width: 100% !important;}
-    
 /* ------ \ Modal ------- */

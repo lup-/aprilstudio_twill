@@ -345,50 +345,34 @@ small,
   line-height: 150%;
 }
 
-.btn a , .btn a :hover{text-decoration: none;outline: 0;}
-.btn:focus,
-.btn.focus,
-.btn:active,
-.btn:active a,
-.btn a:active,
-.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle,
-.btn-primary.focus, .btn-primary:focus
- {
-    outline: 0;
-    box-shadow: none;
-    background-color: #F13A02;
-  }
- .btn-primary {
+.btn a, .btn a:hover {text-decoration: none; outline: 0;}
+
+.btn {
     color: #fff;
-    background-color: #F13A02;
-    border-color: #F13A02;
+    background-color: transparent;
+    border-color: #fff;
     cursor: pointer;
 }
 
-.btn-primary:hover {
-  color: #fff;
-  background-color: #F13A02;
-  border-color: #F13A02;
-  }
-
-.btn_white {
-  color: #fff;
-  background-color: transparent;
+.btn:hover {
+  background-color: #fff;
   border-color: #fff;
 }
-.btn_white a {}
-.btn_white:hover {background-color: #fff;; border-color: #fff;}
-.btn_white:hover a {color:#F13A02}
+.btn:focus,
+.btn:active
+ {
+    outline: 0;
+    box-shadow: none;
+    background-color: #fff;
+    border-color: #fff;
+}
+
+.btn:hover, .btn:hover a, .btn:focus a, .btn:active a {
+  color: #F13A02;
+}
+
 
 .btn_sm {
   padding: 5px 11px 3px 11px;
   font-size: 16px;
-}
-
-
-
-@media (max-width: 620px) {
-  .btn-primary {
-    font-size: 20px;
-    padding: 10px 17px 10px 17px;}
 }

@@ -4,38 +4,21 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="p:domain_verify" content="6cc217c99f01ffe595cadc0c77cd4e97"/>
-        <title>Just Imagine! Контакты</title>
+        <title>Just Imagine! Заказать дизайн</title>
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="/css/frontend.css">
         <link rel="stylesheet" href="/css/buttons.css">
         <link rel="stylesheet" href="/css/bootstrap-modal.css">
         <link rel="stylesheet" href="/css/union.css">
-        <!-- for cursor 1 -->
-        <link rel="stylesheet" href="/css/cursor.css">
-            <script>
-                !function(a){var b=/iPhone/i,c=/iPod/i,d=/iPad/i,e=/(?=.*\bAndroid\b)(?=.*\bMobile\b)/i,f=/Android/i,g=/(?=.*\bAndroid\b)(?=.*\bSD4930UR\b)/i,h=/(?=.*\bAndroid\b)(?=.*\b(?:KFOT|KFTT|KFJWI|KFJWA|KFSOWI|KFTHWI|KFTHWA|KFAPWI|KFAPWA|KFARWI|KFASWI|KFSAWI|KFSAWA)\b)/i,i=/Windows Phone/i,j=/(?=.*\bWindows\b)(?=.*\bARM\b)/i,k=/BlackBerry/i,l=/BB10/i,m=/Opera Mini/i,n=/(CriOS|Chrome)(?=.*\bMobile\b)/i,o=/(?=.*\bFirefox\b)(?=.*\bMobile\b)/i,p=new RegExp("(?:Nexus 7|BNTV250|Kindle Fire|Silk|GT-P1000)","i"),q=function(a,b){return a.test(b)},r=function(a){var r=a||navigator.userAgent,s=r.split("[FBAN");if("undefined"!=typeof s[1]&&(r=s[0]),s=r.split("Twitter"),"undefined"!=typeof s[1]&&(r=s[0]),this.apple={phone:q(b,r),ipod:q(c,r),tablet:!q(b,r)&&q(d,r),device:q(b,r)||q(c,r)||q(d,r)},this.amazon={phone:q(g,r),tablet:!q(g,r)&&q(h,r),device:q(g,r)||q(h,r)},this.android={phone:q(g,r)||q(e,r),tablet:!q(g,r)&&!q(e,r)&&(q(h,r)||q(f,r)),device:q(g,r)||q(h,r)||q(e,r)||q(f,r)},this.windows={phone:q(i,r),tablet:q(j,r),device:q(i,r)||q(j,r)},this.other={blackberry:q(k,r),blackberry10:q(l,r),opera:q(m,r),firefox:q(o,r),chrome:q(n,r),device:q(k,r)||q(l,r)||q(m,r)||q(o,r)||q(n,r)},this.seven_inch=q(p,r),this.any=this.apple.device||this.android.device||this.windows.device||this.other.device||this.seven_inch,this.phone=this.apple.phone||this.android.phone||this.windows.phone,this.tablet=this.apple.tablet||this.android.tablet||this.windows.tablet,"undefined"==typeof window)return this},s=function(){var a=new r;return a.Class=r,a};"undefined"!=typeof module&&module.exports&&"undefined"==typeof window?module.exports=r:"undefined"!=typeof module&&module.exports&&"undefined"!=typeof window?module.exports=s():"function"==typeof define&&define.amd?define("isMobile",[],a.isMobile=s()):a.isMobile=s()}(this);
-                  isMobile.any||document.querySelector('html').classList.add('is-desktop');
-              </script>
-        <!-- \ for cursor 1 -->
     </head>
     <body class="d-flex flex-column" style="background-color: #2B2B2B">
-        <!-- for cursor 1 -->
-        <!--- id="page" --->
-        <div id="page">
-            <a class="c-magnetic" role="menuitem" href="#"><span>Wo444rk</span></a>
-            <a class="c-magnetic" role="menuitem" href="#"><span>Article</span></a>
-            <a class="c-magnetic" role="menuitem" href="#"><span>Contact</span></a>
-          
-            <div class="c-cursor">
-              <div class="c-cursor__pointer"></div>
-            </div>
-        <!-- \ for cursor 1 -->
+
 
 
     <header>
         <div class="logo">
-            <a href="/" class="c-magnetic" role="menuitem" ><span><img src="/images/logoJIm_white.svg" alt="Just Imagine!"></span></a>
+            <a href="/"><img src="/images/logoJIm_white.svg" alt="Just Imagine!"></a>
         </div>
 
         <div class="ForTablet">
@@ -52,9 +35,9 @@
 
         <div class="menublock rotate ForDesktop">
             <nav>
-                <a href="/ru/areas/all/" class="c-magnetic" role="menuitem"><span>Работы</span></a>
-                <a href="/about.html" class="c-magnetic" role="menuitem"><span>О нас</span></a>
-                <a href="/contacts.html" class="c-magnetic" role="menuitem"><span>Контакты</span></a>
+                <a href="/ru/areas/all/">Работы</a>
+                <a href="/about.html">О нас</a>
+                <a href="/contacts.html">Контакты</a>
             </nav>
         </div>
 
@@ -65,7 +48,7 @@
                 <a href="#">Eng</a>
             </nav>
             <nav>
-                <a href="https://www.facebook.com/Union8.design/" class="c-magnetic" role="menuitem"><span>Facebook</span></a>
+                <a href="https://www.facebook.com/Union8.design/">Facebook</a>
                 <a href="https://www.youtube.com/channel/UCudsl0Brc-5e6GG4Vf9LroQ">YouTube</a>
             </nav>
         </div>
@@ -78,21 +61,45 @@
         <main class="py-4 flex-fill innerProjectPage" style="padding-bottom: 400px;">
 
             
-            <h1 style=" padding-top: 50px;">Контакты</h1>
-                <h3><b>Если у вас уже есть задача:</b><br>
-                    В будни с 10 утра до 7 вечера звоните: +7 495 51-484-51<br>
-                    
-                    В любое время пишите на почту: work@aprilstudio.ru
-                    или в телеграм teleg.run/oapril<br><br>
-                    
-                    Просто подружиться:<br>
-                    facebook.com/aprilstudio.ru – общая группа фейсбук<br><br><br><br>
-                </h3>
+            <h1 style=" padding-top: 50px;">Заказать дизайн</h1>
 
-<!-- ---------------- btn_orderblock ---------------- -->
-<div class="btn_order_container"><a  href="#" class="ForDesktop c-magnetic" role="menuitem" id="btn_orderblock"><span class="btn ">Заказать дизайн</span></a></div>
-<!-- ---------------- \ btn_orderblock -------------- -->
+            <form action="" method="post" name="form">
+
+                <p><input name="name" type="text" placeholder="Ваше имя"/></p>
+                <p><input name="emailphone" type="text" placeholder="Ваша почта или телефон"/></p>
+                <p><textarea cols="32" name="message" rows="5" placeholder="Ваше сообщение"></textarea></p>
+                <p><input type="submit" value="Отправить" /></p>
+
+            </form>
+            
         </main>
+
+<?php
+
+// Получаем значения переменных из пришедших данных
+$send = 0;
+$receiveemail = 'bytonerka@gmail.com';
+$name = $_POST['name'];
+$emailphone = $_POST['emailphone'];
+$message = $_POST['message'];
+$letterthene = 'Заказ дизайна.'.' '.$name;
+
+// Формируем сообщение для отправки, в нём мы соберём всё, что ввели в форме 
+$mes = "Имя: $name \nE-mail или телефон: $emailphone \nТекст: $message";
+$send = mail ($receiveemail, $letterthene, $mes, "Content-type:text/plain; charset = UTF-8\r\nFrom:$emailphone");
+
+echo $letterthene;
+ 
+// Если отправка прошла успешно — так и пишем 
+if ($send == 1)
+
+{echo "Сообщение отправлено"; echo $send;}
+
+// Если письмо не ушло — выводим сообщение об ошибке
+
+else {echo "Ой, что-то пошло не так";}
+
+?>
 
 
 <div tabindex="-1" id="menuModal" class="modal fade">
@@ -141,12 +148,6 @@
     </div>
 </div>
 
-
-<!-- for cursor 2 -->
-        </div>
-        <!--- \id="page" --->
-<!-- \ for cursor 2 -->
-
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -158,12 +159,5 @@
             });
             /*  -------- \ logo rotate afer scroll -------- */
         </script>
-
-
-<!-- for cursor 3 -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js'></script>
-<script  src="/js/cursor.js"></script>
-<!-- \ for cursor 3 -->
-
     </body>
 </html>

@@ -6,13 +6,13 @@
 	height:192px;
 	width:100%;
     display:block;
-    background-position: 0 200px;
+    background-position: 0 0;
 }
 .line_projects span {display:block;}
 
 .hovershadow {width:100%; height:100%;}
 :hover.hovershadow {background-image: linear-gradient(to top,  rgba(0,0,0,0.3),  rgba(0,0,0,0.1), rgba(0,0,0,0.1), rgba(0,0,0,0.1), rgba(0,0,0,0.1), rgba(0,0,0,0.1), rgba(0,0,0,0.3) );}
-.line_projects:hover {background-position: 0 0;}
+
 
 
 @media (max-width: 1400px) {
@@ -59,70 +59,3 @@
     .photo__heading.ForMobile .phone {font-size:14px;}
     .photo__container {padding-left:20px; padding-right:20px}
 }
-
-.line_all {background-color:#aaa;}
-.line_alloc {background-color:#141414; background-image:url(http://aprilstudio.ru/imgs/linebg/alloc.png)}
-.line_amway {background-color:#132E59; background-image:url(http://aprilstudio.ru/imgs/linebg/amway.png)}
-.line_atriamagna {background-color:#ccc; background-image:url(http://aprilstudio.ru/imgs/linebg/atriamagna.png)}
-.line_bosco {background-color:#D31044; background-image:url(http://aprilstudio.ru/imgs/linebg/bosco.png)}
-.line_bsby {background-color:#201C1B; background-image:url(http://aprilstudio.ru/imgs/linebg/bsby.png)}
-.line_cherehapa {background-color:#FFDF49; background-image:url(http://aprilstudio.ru/imgs/linebg/cherehapa.png)}
-.line_cinemotion {background-color:#DE913A; background-image:url(http://aprilstudio.ru/imgs/linebg/cinemotion.png)}
-.line_dymov {background-color:#CAA980; background-image:url(http://aprilstudio.ru/imgs/linebg/dymov.png)}
-.line_gisele {background-color:#B02139; background-image:url(http://aprilstudio.ru/imgs/linebg/gisele.png)}
-.line_gum {background-color:#8D1C40; background-image:url(http://aprilstudio.ru/imgs/linebg/gum.png)}
-.line_iceberry {background-color:#C70A45; background-image:url(http://aprilstudio.ru/imgs/linebg/iceberry.png)}
-.line_iknowtravel {background-color:#0A80FF; background-image:url(http://aprilstudio.ru/imgs/linebg/iknowtravel.png)}
-.line_ktk {background-color:#7CBF36; background-image:url(http://aprilstudio.ru/imgs/linebg/ktk.png)}
-.line_mama {background-color:#16AC46; background-image:url(http://aprilstudio.ru/imgs/linebg/mama.png)}
-.line_mediamarkt {background-color:#D70387; background-image:url(http://aprilstudio.ru/imgs/linebg/mediamarkt.png)}
-.line_mevix {background-color:#761C24; background-image:url(http://aprilstudio.ru/imgs/linebg/mevix.png)}
-.line_moley {background-color:#4DC5D7; background-image:url(http://aprilstudio.ru/imgs/linebg/moley.png)}
-.line_natgeo {background-color:#000000; background-image:url(http://aprilstudio.ru/imgs/linebg/natgeo.png)}
-.line_popmech {background-color:#273364; background-image:url(http://aprilstudio.ru/imgs/linebg/popmech.png)}
-.line_protos {background-color:#D93F3F; background-image:url(http://aprilstudio.ru/imgs/linebg/protos.png)}
-.line_rosgazeta {background-color:#EE3048; background-image:url(http://aprilstudio.ru/imgs/linebg/rosgazeta.png)}
-.line_snob {background-color:#3A3A3A; background-image:url(http://aprilstudio.ru/imgs/linebg/snob.png)}
-.line_themoscowtimes {background-color:#5697C3; background-image:url(http://aprilstudio.ru/imgs/linebg/themoscowtimes.png)}
-.line_ticketscloud {background-color:#FFD629; background-image:url(http://aprilstudio.ru/imgs/linebg/ticketscloud.png)}
-.line_vedomosti {background-color:#226F6E; background-image:url(http://aprilstudio.ru/imgs/linebg/vedomosti.png)}
-.line_wardhowell {background-color:#1E3368; background-image:url(http://aprilstudio.ru/imgs/linebg/wardhowell.png)}
-.line_womenshealth {background-color:#FD4080; background-image:url(http://aprilstudio.ru/imgs/linebg/womenshealth.png)}
-.line_contacts {background-color:#F6DC00; background-image:url(http://aprilstudio.ru/imgs/linebg/none.png); color:#253227; text-align:center;}
-
-.line_all .projects_caption {margin:0; width:100%; text-align:center;}
-.line_projects.line_contacts {height:280px;}
-.line_contacts .projects_caption.no_morebtn {margin-left:0; margin-right:0;}
-.line_contacts .projects_caption h2 {line-height:153%;}
-.line_contacts .projects_caption div {width: 100%;}
-
-.line_alloc .btn_more:hover {color:#141414;}
-.line_amway .btn_more:hover {color:#132E59;}
-.line_atriamagna .btn_more:hover {color:#ccc;}
-.line_bosco .btn_more:hover {color:#D31044;}
-.line_bsby .btn_more:hover {color:#201C1B;}
-.line_cherehapa .btn_more:hover {color:#FFDF49;}
-.line_cinemotion .btn_more:hover {color:#DE913A;}
-.line_dymov .btn_more:hover {color:#CAA980;}
-.line_gisele .btn_more:hover {color:#7DBD40;}
-.line_gum .btn_more:hover {color:#AB2141;}
-.line_iceberry .btn_more:hover {color:#AB2141;}
-.line_iknowtravel .btn_more:hover {color:#0085FC;}
-.line_ktk .btn_more:hover {color:#7CBF36;}
-.line_mama .btn_more:hover {color:#BE3259;}
-.line_mediamarkt .btn_more:hover {color:#D70387;}
-.line_mevix .btn_more:hover {color:#2D4C83;}
-.line_moley .btn_more:hover {color:#4DC5D7;}
-.line_natgeo .btn_more:hover {color:#000000;}
-.line_popmech .btn_more:hover {color:#BE325A;}
-.line_protos .btn_more:hover {color:#D93F3F;}
-.line_rosgazeta .btn_more:hover {color:#EE3048;}
-.line_snob .btn_more:hover {color:#3A3A3A;}
-.line_themoscowtimes .btn_more:hover {color:#5697C3;}
-.line_ticketscloud .btn_more:hover {color:#FFD629;}
-.line_vedomosti .btn_more:hover {color:#226F6E;}
-.line_wardhowell .btn_more:hover {color:#1E3368;}
-.line_womenshealth .btn_more:hover {color:#FD4080;}
-
-.line_mediamarkt .projects_caption.no_morebtn {margin-right:260px;}
-.line_rosgazeta .projects_caption.no_morebtn {margin-right:260px;}

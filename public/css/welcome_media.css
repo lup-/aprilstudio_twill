@@ -1,180 +1,42 @@
-
-@media (max-width: 1400px) {
-    .photo__content {bottom: 350px;}
-}
-
-@media (min-width: 1250px) {
-}
-
 @media (max-width: 1250px) {
-    .photo__content {bottom:195px;}
-    .row {margin-left: 0px;}
-    .row::after, .row::before {content: "";display: table;}
-    .row::after {clear: both;}
-    .col {display: inline-block; vertical-align: top; width: 100%;}
-
-    .photo__container {width:870px;}
-    .photo__heading h1 {font-size:30px; margin-bottom:10px;}
-    .photo__heading p {font-size:18px;}
-    .photo {min-width:850px;}
     .projects {min-width:850px;}
     .projects_logo {width:300px;}
-    .projects_logo img {width:70%;}
-    .line_atriamagna .projects_logo img,
-    .line_gisele .projects_logo img,
-    .line_gum .projects_logo img,
-    .line_iceberry .projects_logo img,
-    .line_ktk .projects_logo img,
-    .line_moley .projects_logo img {width:auto;}
-
+    .projects_logo img {max-width:70%;}
     .projects_caption {margin:0 265px 0 300px}
     .projects_caption p {margin-bottom:0;}
     .projects h2 {font-size:28px;}
-    .projects_more {width:184px;}
-    .projects_more .btn_more {font-size:17px; height:42px; line-height:37px; width:149px;}
-    .projects_caption {margin: 0 222px 0 300px;}
+    .projects_caption {margin: 0 110px 0 300px;}
     .projects_caption.no_morebtn {margin-right:170px;}
     .line_projects {height:158px;}
-
-
-    .ipad_hidden {margin-top:80px; padding:0 30px; text-align:center;}
-    .ipad_hidden img {width:100%; margin:0;}
-    .site_screen {padding:0 30px; text-align:center;}
-    .site_screen img {width:100%; margin:0; width:auto;}
-    .iphone_present img {width:330px;}
-}
-
-@media (max-width: 1100px) {
-	.iphone_appstorescreens li {display:block; width:100%; text-align:center;}
-	.textalign_center.ipad_descr {margin-top:-5px;}
-	.rosgazeta .textalign_center.site_screen img {max-width:968px; width:100%;}
-	
 }
 
 
 @media (max-width: 1050px) {
+	.projects h2 {font-size:24px;}
+	.projects_caption {margin: 0 55px 0 300px;}
 }
 
-
-/* 
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 870px) 
-*/
 @media (max-width: 870px) {
 	.projects h2 {font-size:20px;}
-	.photo__container {width:100%; padding-right:10px; padding-left:10px;}
 	.projects {min-width:630px;}
-	.photo {min-width:630px;}
-	.photo__heading h1 {font-size:27px;}
-	.projects_more a, .projects_more span {margin-right:10px;}
-	.projects_more {width: 177px;}
 	.projects_logo {width: 255px;}
-	.projects_caption {margin: 0 198px 0 252px;}
+	.projects_caption {margin: 0 40px 0 252px;}
 	.line_projects {height: 124px;}
-}
-
-/* mobile */
-@media screen and (max-width: 768px) {
-	.ForMobile {display:block;}
-	.ForDesktop {display:none;}
-    
-    header .union_logo {margin: 30px 0 0 30px;}
-    header .union_logo img {width: 250px;}
 }
 
 @media (max-width: 710px) {
 	.projects {min-width:inherit;}
-	.photo {min-width:inherit;}
 	.projects .line_projects {position:relative;}
 	.projects .projects_caption .tags {display:none;}
-	.projects .projects_more {width:20px; height:26px; position:absolute; right:18px; top:48px;}
-	.projects .projects_more em {display:none;}
-	.projects .projects_more .btn {background:url(../imgs/more_arrow.png) no-repeat 0 0; width:20px; height:26px; display:block; border:none;}
-	.projects .projects_more .btn:hover {opacity:0.7;}
 	.projects_caption {margin: 0 61px 0 214px;}
 	.projects_caption.no_morebtn {margin-right:20px;}
-	.line_projects.line_rosgazeta .projects_logo img {margin-left:-54px;}
-	.line_projects.line_moley .projects_logo img {width:150px}
-	.line_projects.line_atriamagna .projects_logo img {width:90px}
-	.line_projects.line_gum .projects_logo img {width:90px}
-	.line_projects.line_ktk .projects_logo img {width:120px}
-	.line_projects.line_iceberry .projects_logo img {width:100px}
-	.line_projects.line_gisele .projects_logo img {width:150px}
 	.projects_logo {width: 217px;}
 	.projects h2 {font-size:19px;}
-        
-    .photo__heading {padding-left: 31px;}
-	.photo__heading h1 {font-size: 19px; margin-bottom:6px; padding-right: 15px;}
-	.photo__heading p {font-size: 15px; line-height: 137%;}
-	.photo__content {bottom:112px;}
-	.photo__presentation {background-position: center -40px; padding-top: 53%;}
-	.textalign_center.iphone_appstorescreens_descr {margin-bottom:150px;}
-    
-    .page404 h1 {font-size: 26px; font-weight: 400; line-height: 100%;}
-    .page404 p {font-size: 16px;}
-    .about h1 {font-size: 26px; font-weight: 400; line-height: 100%;}
-}
-
-@media screen and (max-width: 635px) {
-    .about_photos_vert {width:100%;}
-}
-
-/* retina tablet and mobile */
-@media
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (   min--moz-device-pixel-ratio: 2),
-only screen and (     -o-min-device-pixel-ratio: 2/1),
-only screen and (        min-device-pixel-ratio: 2),
-only screen and (                min-resolution: 192dpi),
-only screen and (                min-resolution: 2dppx) {
-	.ForRetina {display:block;}
-	.ForNotRetina {display:none;}
-
-	.icons {background-image: url(../imgs/icons-mobile_2x.png); 
-                    background-size: 144px auto;
-            -webkit-background-size: 144px auto;
-                 -o-background-size: 144px auto;
-               -moz-background-size: 144px auto;
-    }
-}
-
-
-/* for iphone Retina */
-@media
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (   min--moz-device-pixel-ratio: 2),
-only screen and (     -o-min-device-pixel-ratio: 2/1),
-only screen and (        min-device-pixel-ratio: 2),
-only screen and (                min-resolution: 192dpi),
-only screen and (                min-resolution: 2dppx),
-max-width: 800px { 
-	.icons {background-image: url(../imgs/icons-mobile_2x.png); background-size: 144px auto;
-            -webkit-background-size: 144px auto;
-                 -o-background-size: 144px auto;
-               -moz-background-size: 144px auto;
-    }
-}
-
-
-@media (max-width: 500px) {    
-	.photo__container h1 {font-size:18px;}
-    
-    header {margin-bottom: 15px;}
-    header .union_logo {margin: 20px 0 0 20px;}
-    header .union_logo img {width: 170px;}
-    .menu_button {font-size: 14px; padding: 10px 12px;}
 }
 
 
 @media (max-width: 465px) {
-    body {font-size: 16px;}
-	.photo__presentation {background-position: center 0; }
-	.photo__content {bottom:0px;}
-	
-	.we_photo {height:450px;}
 	.projects {min-width:320px;}
-	.photo {min-width:320px;}
 	.projects .line_projects {position:relative; height: auto;}
 	.projects span.line_projects, .projects a.line_projects .hovershadow {padding:15px 15px 21px 15px;}
 	.projects .projects_caption {margin:20px 0 0 0; height:auto; float:none;}
@@ -182,11 +44,7 @@ max-width: 800px {
 	.projects .projects_caption h2 {font-size:16px; float:left; width:100%; padding-right:40px;}
 	.projects .projects_caption.no_morebtn h2 {width:100%;}
 	.projects .projects_caption .tags {display:none;}
-	.projects .projects_more {width:20px; height:26px; position:absolute; right:15px; top:40px;}
-	.projects .projects_more em {display:none;}
-	.projects .projects_more .btn {background:url(../imgs/more_arrow.png) no-repeat 0 0; width:20px; height:26px; display:block; border:none;}
-	.projects .projects_more .btn:hover {opacity:0.7;}
-	.projects .line_projects .projects_logo img {width:140px; position:relative; transform:none; -ms-transform:none; -webkit-transform:none; -o-transform:none; -moz-transform:none; top:0; left:0;}
+	.projects .line_projects .projects_logo img {max-height: 60px; position:relative; transform:none; -ms-transform:none; -webkit-transform:none; -o-transform:none; -moz-transform:none; top:7px; left:0;}
 	.line_projects.line_contacts h2 {padding:0; margin:0;}
 
 	.projects .line_amway .projects_logo img,
@@ -202,26 +60,72 @@ max-width: 800px {
 	.projects .line_mama .projects_logo img {width:70px;}	
 	.projects .line_themoscowtimes .projects_logo img {width:165px;}
 
-	.photo__container {width:auto;}
-	.photo__container p {font-size:15px; padding:0; margin:0;}
-    .photo__container h1 {line-height: 130% !important; font-size:19px; padding:0 0 8px 0; margin:0;}
-	.photo__content {bottom:151px;}
-    .photo__heading {padding-left:10px; padding-right: 10px;}
-	
-	.photo__heading.ForMobile .phone {font-size:14px;}
-	
 	.projects .projects_more {right:15px; position:absolute; top:50%; transform:translateY(-50%); -ms-transform:translateY(-50%); -webkit-transform:translateY(-50%); -o-transform:translateY(-50%); -moz-transform:translateY(-50%);}
 	.photo__container {padding-left:20px; padding-right:20px}
-	.textalign_center.ipad_descr {margin-top:-8px;}
-	.textalign_center.iphone_startscreen img, .iphone_appstorescreens li img {width:300px;}
-	.textalign_center.iphone_startscreen_descr  {margin-top:-20px;}
 	.projects_caption div, .projects_caption span {position:relative; transform:none; top:auto;}
-	.line_mediamarkt .projects_caption.no_morebtn, .line_rosgazeta .projects_caption.no_morebtn {margin-right:35px;}
-	.line_contacts .projects_caption.no_morebtn {margin-left:0;}
 	a.line_projects:hover .btn_more {background-color: transparent;}
 	:hover.hovershadow {-webkit-box-shadow: inset 0px 22px 16px -11px rgba(0, 0, 0, 0.2), inset 0px -22px 16px -11px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: inset 0px 22px 16px -11px rgba(0, 0, 0, 0.2), inset 0px -22px 16px -11px rgba(0, 0, 0, 0.2);
     box-shadow: inset 0px 22px 16px -11px rgba(0, 0, 0, 0.2), inset 0px -22px 16px -11px rgba(0, 0, 0, 0.2)}
-
 }
 
+
+
+@media (min-width: 1250px) {
+    .photo__heading {padding-left: 83px;}
+}
+
+@media (max-width: 1250px) {
+    .photo__container {width:870px;}
+    .photo__heading h1 {font-size:30px; margin-bottom:10px;}
+    .photo__heading p {font-size:18px;}
+	.photo {min-width:850px;}
+	.logo {margin-left: 46px;}
+}
+
+@media (max-width: 870px) {
+	.projects h2 {font-size:20px;}
+	.photo__container {width:100%; padding-right:10px; padding-left:10px;}
+	.photo {min-width:630px;}
+	.photo__heading h1 {font-size:27px;}
+	.photo__content {bottom:0} 
+	.logo {margin-left: 36px;}
+}
+
+@media (max-width: 710px) {
+    .photo {min-width:inherit;}
+    .photo__heading {padding-left: 31px;}
+    .photo__heading h1 {font-size: 19px; margin-bottom:6px; padding-right: 15px;}
+    .photo__heading p {font-size: 15px; line-height: 137%;}
+    .photo__presentation {background-position: center -40px; padding-top: 53%;}
+    .textalign_center.iphone_appstorescreens_descr {margin-bottom:150px;}
+	.logo {margin-left: 41px;}
+	.projects_caption {margin: 0 21px 0 224px;}
+	.projects_logo {margin-left: 10px; margin-right: 10px;}
+	.projects_logo {margin-left: 10px; margin-right: 10px;}
+}
+
+@media (max-width: 600px) {    
+    .projects h2 {font-size:16px;}
+}
+
+
+@media (max-width: 500px) {    
+    .photo__container h1 {font-size:18px;}
+}
+
+@media (max-width: 465px) {
+    .photo__presentation {background-position: center 0; }
+    .photo {min-width:320px;}
+
+    .photo__container {width:auto;}
+    .photo__container p {font-size:15px; padding:0; margin:0;}
+    .photo__container h1 {line-height: 130% !important; font-size:19px; padding:0 0 8px 0; margin:0;}
+    .photo__heading {padding-left:10px; padding-right: 10px;}
+    .photo__heading.ForMobile .phone {font-size:14px;}
+    .photo__container {padding-left:20px; padding-right:20px}
+	.photo__presentation {padding-top:90%;}
+	.projects span.line_projects, .projects a.line_projects .hovershadow {padding:15px 15px 8px 30px;}
+	.projects_logo {margin-left: 0;}
+	.logo {margin-left: 30px;}
+}
