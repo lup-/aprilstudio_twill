@@ -1,3 +1,9 @@
+<?php
+    $sessionIsNotStarted = !isset($_SESSION);
+    if ($sessionIsNotStarted) {
+        session_start();
+    }
+?>
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -60,7 +66,7 @@
 
         <main class="py-4 flex-fill innerProjectPage" style="padding-bottom: 400px;">
 
-            
+
             <h1 style=" padding-top: 50px;">Заказать дизайн</h1>
 
             <form action="" method="post" name="form">
@@ -68,37 +74,56 @@
                 <p><input name="name" type="text" placeholder="Ваше имя"/></p>
                 <p><input name="emailphone" type="text" placeholder="Ваша почта или телефон"/></p>
                 <p><textarea cols="32" name="message" rows="5" placeholder="Ваше сообщение"></textarea></p>
-                <p><input type="submit" value="Отправить" /></p>
+                <p><input type="submit" name="submit" value="Отправить" /></p>
 
             </form>
-            
+
         </main>
 
 <?php
 
-// Получаем значения переменных из пришедших данных
-$send = 0;
-$receiveemail = 'bytonerka@gmail.com';
-$name = $_POST['name'];
-$emailphone = $_POST['emailphone'];
-$message = $_POST['message'];
-$letterthene = 'Заказ дизайна.'.' '.$name;
+    $requestSubmitted = $_POST['submit'] === 'Отправить';
+    $newSession = empty($_SESSION['token']) && !$requestSubmitted;
 
-// Формируем сообщение для отправки, в нём мы соберём всё, что ввели в форме 
-$mes = "Имя: $name \nE-mail или телефон: $emailphone \nТекст: $message";
-$send = mail ($receiveemail, $letterthene, $mes, "Content-type:text/plain; charset = UTF-8\r\nFrom:$emailphone");
+    if ($newSession) {
+        $tokenLength = 20;
+        $_SESSION['token'] = bin2hex( random_bytes($tokenLength) );
+    }
 
-echo $letterthene;
- 
-// Если отправка прошла успешно — так и пишем 
-if ($send == 1)
+    if ($requestSubmitted) {
+        $savedToken = $_SESSION['token'];
+        $receivedToken = $_POST['title'];
+        $validRequest = $savedToken === $receivedToken;
 
-{echo "Сообщение отправлено"; echo $send;}
+        if ($validRequest) {
+            // Получаем значения переменных из пришедших данных
+            $send = 0;
+            $receiveemail = 'bytonerka@gmail.com';
+            $name = $_POST['name'];
+            $emailphone = $_POST['emailphone'];
+            $message = $_POST['message'];
+            $letterthene = 'Заказ дизайна.' . ' ' . $name;
 
-// Если письмо не ушло — выводим сообщение об ошибке
+            // Формируем сообщение для отправки, в нём мы соберём всё, что ввели в форме
+            $mes = "Имя: $name \nE-mail или телефон: $emailphone \nТекст: $message";
+            $send = mail($receiveemail, $letterthene, $mes, "Content-type:text/plain; charset = UTF-8\r\nFrom:$emailphone");
 
-else {echo "Ой, что-то пошло не так";}
+            echo $letterthene;
 
+            // Если отправка прошла успешно — так и пишем
+            if ($send == 1) {
+                echo "Сообщение отправлено";
+                echo $send;
+            } // Если письмо не ушло — выводим сообщение об ошибке
+
+            else {
+                echo "Ой, что-то пошло не так";
+            }
+        }
+        else {
+            echo "Ошибка проверки данных<br>Обновите страницу и попробуйте снова";
+        }
+    }
 ?>
 
 
@@ -158,6 +183,8 @@ else {echo "Ой, что-то пошло не так";}
                 else $('.logo').removeClass('rotate')
             });
             /*  -------- \ logo rotate afer scroll -------- */
+
+            $('form').append(`<input type="hidden" name="title" value="<?=$_SESSION['token']?>">`);
         </script>
     </body>
 </html>

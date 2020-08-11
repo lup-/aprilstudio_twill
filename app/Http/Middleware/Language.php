@@ -22,8 +22,11 @@ class Language
         else if ($correctLocaleSavedInSession) {
             $requestLocale = Session::get('applocale');
         }
-        else {
+        else if (Config::get('app.guess_locale') === true) {
             $requestLocale = $request->getPreferredLanguage($allLocales);
+        }
+        else {
+            $requestLocale = Config::get('app.locale');
         }
 
         if ($requestLocale) {

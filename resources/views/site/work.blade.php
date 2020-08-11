@@ -27,33 +27,33 @@
         }
         .ABC {}
 
-        .nextWorkBlock .btn:hover, .nextWorkBlock .btn:hover a, .nextWorkBlock .btn:focus a, .nextWorkBlockter .btn:active a, .nextWorkBlock .btn:focus, .nextWorkBlock .btn:active  
+        .nextWorkBlock .btn:hover, .nextWorkBlock .btn:hover a, .nextWorkBlock .btn:focus a, .nextWorkBlockter .btn:active a, .nextWorkBlock .btn:focus, .nextWorkBlock .btn:active
         {
         @if ($nextWork->page_background)
             color: {{$nextWork->page_background}}
-        @endif 
+        @endif
         }
         .ABC {}
-        .modal-content 
+        .modal-content
         {
         @if ($item->page_background)
             background-color: {{$item->page_background}}
-        @endif 
+        @endif
         }
         .ABC {}
-        .nextWorkBlock 
+        .nextWorkBlock
         {
         @if ($nextWork->page_background)
             background-color: {{$nextWork->page_background}};
-        @endif 
+        @endif
         @if ($nextWork->image('cover'))
             background-image: url({{$nextWork->image('cover')}});
-        @endif 
+        @endif
         }
         .ABC {}
 </style>
 
-<img src="{{$item->image('cover')}}" alt="" class="top_bg">
+@include('site.image_with_scales', ['work' => $item, 'role' => 'cover', 'class' => 'top_bg'])
 <!-- page for 1 product  -->
 
     <header>
@@ -83,7 +83,7 @@
 
 <!-- div rotate right menu -->
 <div class="footer_deg90 ForDesktop">
-    <!-- 
+    <!--
             <nav class="lang">
                 <a href="#" class="active">Rus</a>
                 <a href="#">Eng</a>
@@ -97,7 +97,7 @@
     </header>
 
         <div class="innerH1block">
-                    <img src="{{$item->image('logo')}}" alt="{{ $item->title }}">
+                    <img src="{{$item->scaledImage('logo', 440)}}" alt="{{ $item->title }}">
                     <!-- <h1>{{ $item->title }}</h1>
                     <h3>{{ $item->description}}</h3> -->
         </div>
@@ -124,7 +124,11 @@
                 <section class="nextWorkBlock {{$nextWork->page_classes}}">
                     <div class="shadow"></div>
                     <div class="textalign_center showmore s22">Далее</div>
-                    <div class="textalign_center brand_logo"><a href="{{ $nextWork->getRelativeUrl() }}"><img alt="{{ $nextWork->title }}" src="{{ $nextWork->image('logo')}} "></a></div>
+                    <div class="textalign_center brand_logo">
+                        <a href="{{ $nextWork->getRelativeUrl() }}">
+                            <img alt="{{ $nextWork->title }}" src="{{ $nextWork->scaledImage('logo', 440)}} ">
+                        </a>
+                    </div>
                     <div class="textalign_center showmore_btn small"><a href="{{ $nextWork->getRelativeUrl() }}" class="btn">Смотреть</a></div>
                 </section>
             @endif
@@ -172,7 +176,7 @@
                             <li class="menu__item menu__item_modal">
                                 <a class="menu__link" href="https://www.youtube.com/channel/UCudsl0Brc-5e6GG4Vf9LroQ">Youtube</a>
                             </li>
-    <!-- 
+    <!--
                             <li class="menu__item menu__item_modal">
                                 <a class="menu__link" href="#">RUS</a>
                             </li>

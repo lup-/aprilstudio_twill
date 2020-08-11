@@ -62,6 +62,16 @@ class Work extends Model implements Sortable
             'default' => [
                 [ 'name' => 'default', 'ratio' => 0 ],
             ],
+            'mx_1910' => [
+                [
+                    'name'      => 'mx_1910',
+                    'ratio'     => 0,
+                    'minValues' => [
+                        'width'  => 1910,
+                    ],
+                ],
+            ]
+
         ],
     ];
 
@@ -165,5 +175,21 @@ class Work extends Model implements Sortable
         return $nextWork
             ? $nextWork
             : $firstWork;
+    }
+
+    public function scaledImage($role, $width, $crop = 'default') {
+        if (empty($crop)) {
+            $crop = 'default';
+        }
+
+        if (empty($width)) {
+            return $this->image($role, $crop);
+        }
+
+        $image = $this->imageObject($role, $crop);
+        if ($image) {
+            return ImageService::getUrl($image->uuid, ['w' => $width]);
+        }
+        return ImageService::getTransparentFallbackUrl();
     }
 }

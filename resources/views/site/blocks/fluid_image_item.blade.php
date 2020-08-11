@@ -5,5 +5,5 @@
 
 
 @if (isset($render))
-<img src="{{$block->image('fluid_image_item')}}" class="img-fluid">
+@include('site.image_with_scales', ['work' => $block, 'role' => 'fluid_image_item', 'class' => 'img-fluid'])
 @endif
