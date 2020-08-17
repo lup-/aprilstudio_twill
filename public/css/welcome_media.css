@@ -1,11 +1,10 @@
 @media (max-width: 1250px) {
     .projects {min-width:850px;}
-    .projects_logo {width:300px;}
+    .projects_logo {width:300px;min-width:300px;}
     .projects_logo img {max-width:70%;}
-    .projects_caption {margin:0 265px 0 300px}
     .projects_caption p {margin-bottom:0;}
     .projects h2 {font-size:28px;}
-    .projects_caption {margin: 0 110px 0 300px;}
+    .projects_caption {margin: 0 110px 0 0; flex: 1 1 100%;}
     .projects_caption.no_morebtn {margin-right:170px;}
     .line_projects {height:158px;}
 }
@@ -13,14 +12,14 @@
 
 @media (max-width: 1050px) {
 	.projects h2 {font-size:24px;}
-	.projects_caption {margin: 0 55px 0 300px;}
+	.projects_caption {margin: 0 55px 0 0; flex: 1 1 100%;}
 }
 
 @media (max-width: 870px) {
 	.projects h2 {font-size:20px;}
 	.projects {min-width:630px;}
-	.projects_logo {width: 255px;}
-	.projects_caption {margin: 0 40px 0 252px;}
+	.projects_logo {width: 255px;min-width:255px;}
+	.projects_caption {margin: 0 40px 0 0; flex: 1 1 100%;}
 	.line_projects {height: 124px;}
 }
 
@@ -28,9 +27,9 @@
 	.projects {min-width:inherit;}
 	.projects .line_projects {position:relative;}
 	.projects .projects_caption .tags {display:none;}
-	.projects_caption {margin: 0 61px 0 214px;}
+	.projects_caption {margin: 0 61px 0 0; flex: 1 1 100%;}
 	.projects_caption.no_morebtn {margin-right:20px;}
-	.projects_logo {width: 217px;}
+	.projects_logo {width: 217px;min-width:217px;}
 	.projects h2 {font-size:19px;}
 }
 
@@ -39,8 +38,8 @@
 	.projects {min-width:320px;}
 	.projects .line_projects {position:relative; height: auto;}
 	.projects span.line_projects, .projects a.line_projects .hovershadow {padding:15px 15px 21px 15px;}
-	.projects .projects_caption {margin:20px 0 0 0; height:auto; float:none;}
-	.projects .projects_logo { width:250px; height:auto; float:none;  position:relative;}
+	.projects .projects_caption {margin:20px 0 0 0; flex: 1 1 100%; height:auto; float:none;}
+	.projects .projects_logo { width:250px; min-width:250px; height:auto; float:none;  position:relative;}
 	.projects .projects_caption h2 {font-size:16px; float:left; width:100%; padding-right:40px;}
 	.projects .projects_caption.no_morebtn h2 {width:100%;}
 	.projects .projects_caption .tags {display:none;}
@@ -51,13 +50,13 @@
 	.projects .line_bosco .projects_logo img,
 	.projects .line_snob .projects_logo img,
 	.projects .line_moley .projects_logo img {width:110px;}
-	
+
 	.projects .line_atriamagna .projects_logo img,
 	.projects .line_gisele .projects_logo img,
 	.projects .line_gum .projects_logo img,
 	.projects .line_iceberry .projects_logo img,
 	.projects .line_ktk .projects_logo img,
-	.projects .line_mama .projects_logo img {width:70px;}	
+	.projects .line_mama .projects_logo img {width:70px;}
 	.projects .line_themoscowtimes .projects_logo img {width:165px;}
 
 	.projects .projects_more {right:15px; position:absolute; top:50%; transform:translateY(-50%); -ms-transform:translateY(-50%); -webkit-transform:translateY(-50%); -o-transform:translateY(-50%); -moz-transform:translateY(-50%);}
@@ -88,7 +87,7 @@
 	.photo__container {width:100%; padding-right:10px; padding-left:10px;}
 	.photo {min-width:630px;}
 	.photo__heading h1 {font-size:27px;}
-	.photo__content {bottom:0} 
+	.photo__content {bottom:0}
 	.logo {margin-left: 36px;}
 }
 
@@ -100,17 +99,17 @@
     .photo__presentation {background-position: center -40px; padding-top: 53%;}
     .textalign_center.iphone_appstorescreens_descr {margin-bottom:150px;}
 	.logo {margin-left: 41px;}
-	.projects_caption {margin: 0 21px 0 224px;}
+	.projects_caption {margin: 0 21px 0 0; flex: 1 1 100%;}
 	.projects_logo {margin-left: 10px; margin-right: 10px;}
 	.projects_logo {margin-left: 10px; margin-right: 10px;}
 }
 
-@media (max-width: 600px) {    
+@media (max-width: 600px) {
     .projects h2 {font-size:16px;}
 }
 
 
-@media (max-width: 500px) {    
+@media (max-width: 500px) {
     .photo__container h1 {font-size:18px;}
 }
 

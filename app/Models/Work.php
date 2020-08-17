@@ -11,6 +11,7 @@ use A17\Twill\Models\Behaviors\HasFiles;
 use A17\Twill\Models\Behaviors\HasPosition;
 use A17\Twill\Models\Behaviors\Sortable;
 use A17\Twill\Models\Model;
+use App\Helpers\Image;
 use Cartalyst\Tags\TaggableTrait;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\DB;
@@ -178,18 +179,6 @@ class Work extends Model implements Sortable
     }
 
     public function scaledImage($role, $width, $crop = 'default') {
-        if (empty($crop)) {
-            $crop = 'default';
-        }
-
-        if (empty($width)) {
-            return $this->image($role, $crop);
-        }
-
-        $image = $this->imageObject($role, $crop);
-        if ($image) {
-            return ImageService::getUrl($image->uuid, ['w' => $width]);
-        }
-        return ImageService::getTransparentFallbackUrl();
+        return Image::getScaledUrl($this, $role, $width, $crop);
     }
 }

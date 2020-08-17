@@ -1,14 +1,14 @@
 @font-face {
-    font-family: "Mont"; 
-    src: url(/fonts/Mont-Regular.eot?) format("eot"), 
-    url(/fonts/Mont-Regular.woff) format("woff"), 
+    font-family: "Mont";
+    src: url(/fonts/Mont-Regular.eot?) format("eot"),
+    url(/fonts/Mont-Regular.woff) format("woff"),
     url(/fonts/Mont-Regular.ttf) format("truetype");
     font-weight: 300;
    }
 @font-face {
-    font-family: "Mont"; 
-    src: url(/fonts/Mont-SemiBold.eot?) format("eot"), 
-    url(/fonts/Mont-SemiBold.woff) format("woff"), 
+    font-family: "Mont";
+    src: url(/fonts/Mont-SemiBold.eot?) format("eot"),
+    url(/fonts/Mont-SemiBold.woff) format("woff"),
     url(/fonts/Mont-SemiBold.ttf) format("truetype");
     font-weight: 500;
    }
@@ -16,7 +16,7 @@
 * {
         font-family: "Mont", "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-weight: 300;
-    }  
+    }
 html, body {
         position: relative;
         width: 100%;
@@ -83,12 +83,12 @@ html {transition: 1s background, color;}
 .night .menublock.rotate a,
 .night .footer_deg90 nav a,
 .night h3,
-.night .btn_white:hover,  
-.night .btn_white:hover a, 
+.night .btn_white:hover,
+.night .btn_white:hover a,
 .night .btn_white a:hover,
 .night .next-work h6,
 .night .innerH1block h3,
-.night .next-work h4 a, 
+.night .next-work h4 a,
 .night .next-work h4 a:hover,
 .night main.innerProjectPage .innerCaseStudyText p {color:#51565C;}
 
@@ -100,11 +100,11 @@ html {transition: 1s background, color;}
 .night .btn-primary:hover a,
 .night .news a:hover h3,
 .night .mode_descr::after,
-.night .menublock.rotate a.active, 
+.night .menublock.rotate a.active,
 .night .menublock.rotate a.active:hover,
 .night .footer_deg90 nav.lang a.active,
 .night .footer_deg90 nav.lang a.active:hover,
-.night .next-work h2 a, 
+.night .next-work h2 a,
 .night .next-work h2 a:hover {color: #fff;}
 
 .night .footer_deg90 nav a:hover,
@@ -259,7 +259,7 @@ label[for="mode"] span {position: absolute;display: block;width: 10px;height: 10
 @keyframes sideslide {
 		0% {transform: translateX(0) scale(1);}
 		50% {transform: translateX(-50%) scale(.75);}
-		100% {transform: translateX(-16px) scale(1);}		
+		100% {transform: translateX(-16px) scale(1);}
 }
 /*  ---------------- \ animation switcher day-night mode ------------------ */
 
@@ -275,7 +275,7 @@ label[for="mode"] span {position: absolute;display: block;width: 10px;height: 10
 #fotmenu_smallscreen {display: none; font-size: 1px; line-height: 1px; margin-bottom: 3px;}
 #fotmenu_smallscreen a {margin-right: 6px;}
 /*
-.cookies {position: fixed; display:flex; align-items:center; justify-content:center; z-index: 150; bottom: 60px; font-size: 20px; left: 0; margin: 0 50px; margin: 0 auto; width: 100%;} 
+.cookies {position: fixed; display:flex; align-items:center; justify-content:center; z-index: 150; bottom: 60px; font-size: 20px; left: 0; margin: 0 50px; margin: 0 auto; width: 100%;}
 .cookies p {background-color: #fff; padding: 10px 10px 10px 20px; border-radius: 60px; box-shadow: 0 0 5px #777; font-size: 20px; box-shadow: 0 0 5px #777;}
 .cookies_orange p {background-color: #FF3F05; color: #fff; padding-right: 20px;}
 .cookies_orange p a, .cookies_violet p a:hover  {text-decoration: none; color: #fff;}
@@ -308,7 +308,7 @@ ul.AreasList a.active {text-decoration: none; border: none; color:#FF3F05;}
 .news.news_long {margin-top:0;}
 
 .news_item_long {width:636px; border-bottom:#D8D8D8 1px solid; padding-bottom:13px; margin-bottom:22px}
-.news_item_long h3 {font-size:30px} 
+.news_item_long h3 {font-size:30px}
 .grid li a {padding: 0 16px 0px 16px;}
 * fluid 3 columns *
 .grid-sizer, .grid-item {width: 33%;}
@@ -353,7 +353,7 @@ ul.AreasList a.active {text-decoration: none; border: none; color:#FF3F05;}
 .projects_more {width:240px; height:100%; float:right; position:relative;}
 .projects_more a, .projects_more span {margin-right:58px; position:absolute; top:50%; transform:translateY(-50%);}
 .projects_more em {font-style:normal;}
-.projects_caption {margin:0 235px 0 470px; position:relative; height:100%}
+.projects_caption {margin:0 235px 0 0; flex: 1 1 100%; position:relative; height:100%}
 .projects_caption.no_morebtn {margin-right:260px;}
 .projects_caption div, .projects_caption span {position:absolute; top:50%; transform:translateY(-50%); width:100%}
 
@@ -362,7 +362,7 @@ ul.AreasList a.active {text-decoration: none; border: none; color:#FF3F05;}
 .line_projects span {display:block;}
 .line_projects.line_contacts a {color:#253227 !important; text-decoration:none !important;}
 
-.hovershadow {width:100%; height:100%;}
+.hovershadow {display:flex!important; align-items: center; width:100%; height:100%;}
 :hover.hovershadow {background-image: linear-gradient(to top,  rgba(0,0,0,0.3),  rgba(0,0,0,0.1), rgba(0,0,0,0.1), rgba(0,0,0,0.1), rgba(0,0,0,0.1), rgba(0,0,0,0.1), rgba(0,0,0,0.3) );}
 /* ------------------ \ Welcome page. Lines -------------------------- */
 
@@ -491,11 +491,11 @@ footer.innerNextWork .btn-link {opacity: 0.5;}
         .lead_welcome {padding: 0 40px 0 40px;}
         main.listblade {margin: 0 10px 0 5px;}
         .innerH1block, main.innerProjectPage {margin-left: 40px; margin-right: 40px;}
-        /* fluid 2 columns 
+        /* fluid 2 columns
         .grid li {width: 50%;}
 */
 
-        .OneWorkPage .logo {position: relative;} 
+        .OneWorkPage .logo {position: relative;}
         .menublock {position: relative;}
         header nav {margin: 0;}
         .menublock.rotate {
@@ -563,7 +563,7 @@ footer.innerNextWork .btn-link {opacity: 0.5;}
         .lead h1 {font-size: 47px;}
         .blockquoteText {font-size: 25px; padding-left: 40px; padding-right: 40px;}
         .innerH1block img {max-width: 220px; max-height: 100px;}
-        
+
         ul.AreasList li {display: block;}
         .next-work_info {width: 100%; float:none;}
         .next-work_btn {display: none;}
@@ -599,7 +599,7 @@ footer.innerNextWork .btn-link {opacity: 0.5;}
         .logo {margin-left: 21px; margin-top: 40px;}
         .logo img {width: 115px;}
         .cookies_violet {width: 100%; left: auto; margin-left: 0;}
-        
+
         .menublock {margin-top: 40px;}
 
         .innerH1block, main.innerProjectPage {margin-left: 20px; margin-right: 20px;}
@@ -626,7 +626,7 @@ footer.innerNextWork .btn-link {opacity: 0.5;}
                 text-align: right;}
 }
 @media (max-width: 768px) and (orientation: landscape) {
-   
+
 }
 @media (max-width: 500px) {
         .cookies p span {white-space: normal;}
