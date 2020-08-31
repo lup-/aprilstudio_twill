@@ -64,22 +64,6 @@
         <div class="innerH1block">
         </div>
 
-        <main class="py-4 flex-fill innerProjectPage" style="padding-bottom: 400px;">
-
-
-            <h1 style=" padding-top: 50px;">Заказать дизайн</h1>
-
-            <form action="" method="post" name="form">
-
-                <p><input name="name" type="text" placeholder="Ваше имя"/></p>
-                <p><input name="emailphone" type="text" placeholder="Ваша почта или телефон"/></p>
-                <p><textarea cols="32" name="message" rows="5" placeholder="Ваше сообщение"></textarea></p>
-                <p><input type="submit" name="submit" value="Отправить" /></p>
-
-            </form>
-
-        </main>
-
 <?php
 
     $requestSubmitted = $_POST['submit'] === 'Отправить';
@@ -90,10 +74,13 @@
         $_SESSION['token'] = bin2hex( random_bytes($tokenLength) );
     }
 
-    if ($requestSubmitted) {
+    if ($requestSubmitted):
         $savedToken = $_SESSION['token'];
         $receivedToken = $_POST['title'];
         $validRequest = $savedToken === $receivedToken;
+
+        $userMessage = "Ошибка проверки данных";
+        $helpMessage = "Обновите страницу и попробуйте снова";
 
         if ($validRequest) {
             // Получаем значения переменных из пришедших данных
@@ -108,24 +95,37 @@
             $mes = "Имя: $name \nE-mail или телефон: $emailphone \nТекст: $message";
             $send = mail($receiveemail, $letterthene, $mes, "Content-type:text/plain; charset = UTF-8\r\nFrom:$emailphone");
 
-            echo $letterthene;
-
-            // Если отправка прошла успешно — так и пишем
             if ($send == 1) {
-                echo "Сообщение отправлено";
-                echo $send;
-            } // Если письмо не ушло — выводим сообщение об ошибке
-
+                $userMessage = "Спасибо!";
+                $helpMessage = "Мы с вами свяжемся в ближайшее время";
+            }
             else {
-                echo "Ой, что-то пошло не так";
+                $userMessage = "Ой, что-то не так";
+                $helpMessage = "Вернитесь назад и повторите отправку";
             }
         }
-        else {
-            echo "Ошибка проверки данных<br>Обновите страницу и попробуйте снова";
-        }
-    }
+    ?>
+    <main class="py-4 flex-fill innerProjectPage" style="padding-bottom: 400px;">
+        <h1 style=" padding-top: 50px;"><?php echo $userMessage ?></h1>
+        <h4><?php echo $helpMessage ?></h4>
+    </main>
+<?php
+    else:
 ?>
+    <main class="py-4 flex-fill innerProjectPage" style="padding-bottom: 400px;">
+        <h1 style=" padding-top: 50px;">Заказать дизайн</h1>
+        <form action="" method="post" name="form">
 
+            <p><input name="name" type="text" placeholder="Ваше имя"/></p>
+            <p><input name="emailphone" type="text" placeholder="Ваша почта или телефон"/></p>
+            <p><textarea cols="32" name="message" rows="5" placeholder="Ваше сообщение"></textarea></p>
+            <p><input type="submit" name="submit" value="Отправить" /></p>
+
+        </form>
+    </main>
+<?php
+    endif;
+?>
 
 <div tabindex="-1" id="menuModal" class="modal fade">
     <div role="document" class="modal-dialog modal-dialog_menu">
