@@ -112,7 +112,7 @@
 
             {!! $item->renderBlocks() !!}
 <!-- ---------------- btn_orderblock ---------------- -->
-<div class="btn_order_container"><a  href="#" class="btn ForDesktop" id="btn_orderblock">Заказать дизайн</a></div>
+<div class="btn_order_container"><a href="/order.php?{{ $item->title }}" class="btn ForDesktop" id="btn_orderblock">Заказать дизайн</a></div>
 <!-- ---------------- \ btn_orderblock -------------- -->
         </main>
 
@@ -168,6 +168,10 @@
                             <li class="menu__item menu__item_modal">
                                 <a class="menu__link" href="/contacts.html">Контакты</a>
                             </li>
+                            <li class="menu__item menu__item_modal">
+                                <a class="menu__link" href="/order.php?{{ $item->title }}">Заказать дизайн</a>
+                            </li>
+
                         </ul>
                         <ul class="menu smalltext">
                             <li class="menu__item menu__item_modal">
