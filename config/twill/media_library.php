@@ -4,7 +4,8 @@ use App\Services\MediaLibrary\GlideProxyExclugingGifs;
 
 return [
     'disk'                        => 'twill_media_library',
-    'endpoint_type'               => 'local',
+    'endpoint_type'               => 's3',
+    'acl'                         => 'public-read',
     'local_path'                  => 'uploads',
     'download_local_path'         => 'app/public/uploads',
     'image_service'               => GlideProxyExclugingGifs::class,

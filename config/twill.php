@@ -139,7 +139,6 @@ return [
                 ],
             ],
         ],
-
     ],
     'buckets' => [
         'homepage' => [
