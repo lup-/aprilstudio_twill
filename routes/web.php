@@ -9,5 +9,5 @@ Route::get('/{lang}/categories/{slug}', 'Frontend\CategoryController@show');
 
 Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'Frontend\LanguageController@switchLang']);
 
-Route::get('/' . config('twill.glide.base_path') . '/{path}', "\A17\Twill\Http\Controllers\Front\GlideController")
+Route::get('/' . config('twill.glide.base_path') . '/{path}', "\App\Http\Controllers\TwillOverride\GlideController")
     ->where('path', '.*');
