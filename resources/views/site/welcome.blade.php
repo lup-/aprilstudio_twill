@@ -115,10 +115,7 @@
                         <ul class="menu">
                             <li class="menu__item menu__item_modal">
                                 <a class="menu__link" href="/">Работы</a>
-                            </li> <!--
-                            <li class="menu__item menu__item_modal">
-                                <a class="menu__link" href="/ru/areas/all/">Работы</a>
-                            </li> -->
+                            </li> 
                             <li class="menu__item menu__item_modal">
                                 <a class="menu__link" href="/about.html">О нас</a>
                             </li>
@@ -128,19 +125,8 @@
                         </ul>
                         <ul class="menu smalltext">
                             <li class="menu__item menu__item_modal">
-                                <a class="menu__link" href="https://www.facebook.com/union4.design/">Facebook</a>
+                                <a class="menu__link" href="/order.php?welcomepage">Заказать дизайн</a>
                             </li>
-                            <li class="menu__item menu__item_modal">
-                                <a class="menu__link" href="https://www.youtube.com/channel/UCudsl0Brc-5e6GG4Vf9LroQ">Youtube</a>
-                            </li>
-    <!-- 
-                            <li class="menu__item menu__item_modal">
-                                <a class="menu__link" href="#">RUS</a>
-                            </li>
-                            <li class="menu__item menu__item_modal">
-                                <a class="menu__link" href="#">ENG</a>
-                            </li>
--->
                         </ul>
                     </nav>
                 </div>

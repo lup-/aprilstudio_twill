@@ -152,7 +152,8 @@ body.welcomePage {background-color: #3173FF;}
                 bottom:0;
         }
 
-        .logo {position: fixed; top: 0; z-index: 1001; margin-top: 62px; margin-left: 103px;}
+        .logo {position: fixed; top: 0; z-index: 1001; margin-top: 62px; margin-left: 63px;}
+        /*
         .logo.rotate {
                 -webkit-transform: rotate(-90deg);
                 -moz-transform: rotate(-90deg);
@@ -167,14 +168,14 @@ body.welcomePage {background-color: #3173FF;}
                 transform-origin: left top;
                 margin-top: 219px;
                 margin-left: 30px;}
-        .logo.rotate img {margin:0;}
-       /* .logo img {float: left; margin:79px 0px 0px 80px; width: 146px;} */
+        .logo.rotate img {margin:0;} */
+       /* .logo img {float: left; margin:79px 0px 0px 80px; width: 146px;} 
         .logo .logo_forDay {display: block;}
-        .logo .logo_forNight {display: none;}
+        .logo .logo_forNight {display: none;} */
         .copy {color: #5C5B51; opacity: 0.5; margin-top: 3px;}
 
         main.welcomePage {position: relative;}
-        main {margin: 0 auto 0 auto; font-size: 28px; line-height: 150%; position: relative; z-index: 40;}
+        main {margin: 0; font-size: 28px; line-height: 150%; position: relative; z-index: 40;}
         main .leadtext {font-size: 28px;}
         main.width850 {max-width: 850px;}
 
@@ -377,7 +378,7 @@ main.listblade {margin: 0 45px 0 95px;}
 .blacktext .footer_deg90 nav.lang a.active, .blacktext .footer_deg90 nav.lang a.active:hover {color:#000; opacity: 0.8;}
 .blacktext .footer_deg90 nav.lang a:hover {color:#000; opacity: 0.85;}
 .blacktext header nav a:hover {color:#000; opacity: 0.85;}
-.blacktext .logo img, .blacktext .icon_close {-webkit-filter: invert(100%); filter: invert(100%);}
+.blacktext .icon_close {-webkit-filter: invert(100%); filter: invert(100%);}
 .blacktext .nav-mobile span {border-top-color: #000;}
 .blacktext .nav-mobile span:after, .blacktext .nav-mobile span:before {background-color: #000;}
 .blacktext .modal-backdrop {background: #333;}
@@ -399,7 +400,7 @@ main.listblade {margin: 0 45px 0 95px;}
 .innerH1block h3 {font-size: 20px;}
 
 body.OneWorkPage {color: #fff;}
-main.innerProjectPage {padding:0; margin: 0 160px 80px 160px}
+main.innerProjectPage {padding: 0;}
 main.innerProjectPage .innerCaseStudyText p {width:70%; font-size: 20px; padding: 0; margin: 0 0 5px 0; line-height: 130%; margin: 0 auto;}
 main.innerProjectPage .innerCaseStudyText {margin-bottom: 10px; text-align: center; margin-bottom: 45px;}
 main.innerProjectPage.py-4.flex-fill {padding-top: 0 !important;}
@@ -449,7 +450,7 @@ footer.innerNextWork .btn-link {opacity: 0.5;}
 
 .nextWorkBlock .btn_more, .nextWorkBlock .btn_more:link, .nextWorkBlock .btn_more:active, .nextWorkBlock .btn_more:visited {border-color:#5C658A; width:143px;}
 .nextWorkBlock .btn_more:hover {border-color:#fff;}
-.nextWorkBlock .shadow {height:14px; width:100%; background:linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.01)) repeat scroll 0 0; opacity: 0.47;}
+.nextWorkBlock .shadow {height:20px; width:100%; box-shadow: none !important; background:linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.01)) repeat scroll 0 0; opacity: 0.47;}
 
 /* ------------- \ innet 1 project page ------------- */
 
@@ -490,7 +491,8 @@ footer.innerNextWork .btn-link {opacity: 0.5;}
         .innerH1block {padding-top:40px; margin-top: 40px;}
         .lead_welcome {padding: 0 40px 0 40px;}
         main.listblade {margin: 0 10px 0 5px;}
-        .innerH1block, main.innerProjectPage {margin-left: 40px; margin-right: 40px;}
+        /* .innerH1block, main.innerProjectPage {margin-left: 40px; margin-right: 40px;} */
+        .innerCaseStudyText {margin-left: 40px; margin-right: 40px;}
         /* fluid 2 columns
         .grid li {width: 50%;}
 */
@@ -602,7 +604,9 @@ footer.innerNextWork .btn-link {opacity: 0.5;}
 
         .menublock {margin-top: 40px;}
 
-        .innerH1block, main.innerProjectPage {margin-left: 20px; margin-right: 20px;}
+        .innerH1block {margin-left: 20px; margin-right: 20px;}
+        .innerCaseStudyText {margin-left: 20px; margin-right: 20px;}
+        /* .innerH1block, main.innerProjectPage {margin-left: 20px; margin-right: 20px;} */
         footer.innerNextWork {padding-left: 20px; padding-right: 20px;}
         .lead {padding-top:300px; padding-left: 20px; padding-right: 20px;}
         .lead h1 {font-size: 43px;}
@@ -655,7 +659,10 @@ footer.innerNextWork .btn-link {opacity: 0.5;}
 
 
 
-main.py-4.flex-fill .container-fluid {padding-right: 0; padding-left: 0;}
+/* -- main.py-4.flex-fill .container-fluid {padding-right: 0; padding-left: 0;} --*/
+main.py-4.flex-fill .container-fluid .row{margin-left: 0; margin-right: 0;}
+.container-fluid.mb-4 {padding-left: 0; padding-right: 0;}
+
 footer .row {margin-right: 0; margin-left: 0;}
 footer .px-4 {padding-right: 20px!important;}
 footer .row .col-md-6, footer .row .col-12 {padding-left:0;}

@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="p:domain_verify" content="6cc217c99f01ffe595cadc0c77cd4e97"/>
-        <title>Just Imagine! {{ $item->title }}</title>
+        <title>{{ $item->title }} Дизайн Just Imagine!</title>
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="/css/frontend.css">
@@ -51,49 +51,90 @@
         @endif
         }
         .ABC {}
+
+
+
+/* -- -------- fadeOut after refresh (1/3) -------- */
+    .fade_Logo {
+        display: block;
+    }
+    .logo img {position:absolute}
+    .fade_WhenInPageDiv, .fade_WhenOutPageDiv {
+        z-index: 999;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
+    .fade_WhenInPageDiv {
+        display: block;
+    }
+    .fade_WhenOutPageDiv {
+        display: none;
+    }
+    .fade_WhenInPageDiv
+        {
+        @if ($item->page_background)
+            background-color: {{$item->page_background}}
+            /* background-color: red; */
+        @endif
+        }
+        .ABC {}
+        
+    .fade_WhenOutPageDiv
+        {
+        @if ($nextWork->page_background)
+           background-color: {{$nextWork->page_background}};
+        /* background-color: violet; */
+        @endif
+        }
+        .ABC {}
+
+.logo .whiteLogo {
+        filter: none;
+        display: block;
+        z-index: 1;
+        @if ($item->page_classes)
+            display: none;
+            z-index: 4;
+        @endif
+    }
+        .ABC {}
+
+.logo .blackLogo {
+        -webkit-filter: invert(100%); filter: invert(100%);
+        display: none;
+        z-index: 2;
+        @if ($item->page_classes)
+            display: block;
+            z-index: 3;
+        @endif
+    }
+        .ABC {}
+
+/* -- -------- \ fadeOut after refresh (1/3) -------- */
+
 </style>
 
 @include('site.image_with_scales', ['work' => $item, 'role' => 'cover', 'class' => 'top_bg'])
+
+
+<!-- -------- fadeOut after refresh (2/3) -------- -->
+<div class="fade_WhenInPageDiv"></div>
+<div class="fade_WhenOutPageDiv"></div>
+<!-- -------- \ fadeOut after refresh (2/3) -------- -->
+
 <!-- page for 1 product  -->
 
     <header>
         <div class="logo">
-            <a href="/"><img src="/images/logoJIm_white.svg" alt="Just Imagine!"></a>
+            <a href="/" class="fadeOutForClick"><img src="/images/logoJIm_white.svg" alt="Just Imagine!" class="whiteLogo"></a>
+            <a href="/" class="fadeOutForClick"><img src="/images/logoJIm_white.svg" alt="Just Imagine!" class="blackLogo"></a>
         </div>
 
-        <div class="ForTablet">
         <div class="nav-mobile nav-mobile_color_blue nav-mobile_right visible-xs_flex" data-toggle="modal" data-target="#menuModal">
                 <span></span>
         </div>
-        </div>
 
-<div class="ForMobile">
-<div class="nav-mobile nav-mobile_color_blue nav-mobile_right visible-xs_flex" data-toggle="modal" data-target="#menuModal">
-        <span></span>
-</div>
-</div>
-
-        <div class="menublock rotate ForDesktop">
-            <nav>
-                <a href="/ru/areas/all/">Работы</a>
-                <a href="/about.html">О нас</a>
-                <a href="/contacts.html">Контакты</a>
-            </nav>
-        </div>
-
-<!-- div rotate right menu -->
-<div class="footer_deg90 ForDesktop">
-    <!--
-            <nav class="lang">
-                <a href="#" class="active">Rus</a>
-                <a href="#">Eng</a>
-            </nav> -->
-            <nav>
-                <a href="https://www.facebook.com/Union8.design/">Facebook</a>
-                <a href="https://www.youtube.com/channel/UCudsl0Brc-5e6GG4Vf9LroQ">YouTube</a>
-            </nav>
-        </div>
-<!-- \ div rotate right menu -->
     </header>
 
         <div class="innerH1block">
@@ -103,6 +144,7 @@
         </div>
 
         <main class="py-4 flex-fill innerProjectPage">
+        <div class="clickme"></div>
 
             @if ($item->casestudy)
                     <div class="innerCaseStudyText">
@@ -129,7 +171,7 @@
                             <img alt="{{ $nextWork->title }}" src="{{ $nextWork->scaledImage('logo', 440)}} ">
                         </a>
                     </div>
-                    <div class="textalign_center showmore_btn small"><a href="{{ $nextWork->getRelativeUrl() }}" class="btn">Смотреть</a></div>
+                    <div class="textalign_center showmore_btn small"><a href="{{ $nextWork->getRelativeUrl() }}" class="btn fadeOutForClick">Смотреть</a></div>
                 </section>
             @endif
 
@@ -158,36 +200,18 @@
                         <ul class="menu">
                             <li class="menu__item menu__item_modal">
                                 <a class="menu__link" href="/">Работы</a>
-                            </li> <!--
-                            <li class="menu__item menu__item_modal">
-                                <a class="menu__link" href="/ru/areas/all/">Работы</a>
-                            </li> -->
+                            </li>
                             <li class="menu__item menu__item_modal">
                                 <a class="menu__link" href="/about.html">О нас</a>
                             </li>
                             <li class="menu__item menu__item_modal">
                                 <a class="menu__link" href="/contacts.html">Контакты</a>
                             </li>
-                            <li class="menu__item menu__item_modal">
-                                <a class="menu__link" href="/order.php?{{ $item->title }}">Заказать дизайн</a>
-                            </li>
-
                         </ul>
                         <ul class="menu smalltext">
                             <li class="menu__item menu__item_modal">
-                                <a class="menu__link" href="https://www.facebook.com/union4.design/">Facebook</a>
+                                <a class="menu__link" href="/order.php?{{ $item->title }}">Заказать дизайн</a>
                             </li>
-                            <li class="menu__item menu__item_modal">
-                                <a class="menu__link" href="https://www.youtube.com/channel/UCudsl0Brc-5e6GG4Vf9LroQ">Youtube</a>
-                            </li>
-    <!--
-                            <li class="menu__item menu__item_modal">
-                                <a class="menu__link" href="#">RUS</a>
-                            </li>
-                            <li class="menu__item menu__item_modal">
-                                <a class="menu__link" href="#">ENG</a>
-                            </li>
-    -->
                         </ul>
                     </nav>
                 </div>
@@ -196,16 +220,46 @@
     </div>
 </div>
 
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+       <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> -->
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <script>
-            /*  -------- logo rotate afer scroll -------- */
+            /*  -------- logo rotate afer scroll -------- 
             $(window).scroll(function(){
                 if ($(this).scrollTop() > 200) $('.logo').addClass('rotate')
                 else $('.logo').removeClass('rotate')
             });
-            /*  -------- \ logo rotate afer scroll -------- */
+              -------- \ logo rotate afer scroll -------- */
         </script>
+
+
+
+<!-- -------- fadeOut after refresh (3/3) -------- -->
+<script>
+
+$('.fade_WhenInPageDiv').fadeOut(1000); /* зашли на страницу -> фон выключается */
+
+$('.fadeOutForClick').on('click', function(e) {
+    e.preventDefault();
+    var url = $(this).attr('href');
+    $('.fade_WhenOutPageDiv').fadeIn(1000); /* медленно включается цветной слой */
+
+    @if (($nextWork->page_classes) > ($item->page_classes)) /* название класса след работы больше, чем название класса предыдущей работы (у нас у работ с белым логотипом класс "", у работ с черным логотипом класс "blacktext") */
+        $('.blackLogo').fadeIn(500); /* включаем черный логотип */
+    @endif
+
+    @if (($nextWork->page_classes) < ($item->page_classes)) 
+        $('.whiteLogo').fadeIn(500);
+    @endif
+
+    setInterval(function() { /* переход на след страницу делаем с задержкой */
+        window.location = url;
+    }, 1000);
+
+});
+
+ </script>
+
     </body>
 </html>
